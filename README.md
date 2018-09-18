@@ -10,6 +10,16 @@
 
 
 
+
+**Sept. 18, 2018:** 
+
+
+
++ Wired up Material-UI and its theme
+
+
+
+
 **Sept. 17, 2018:**
 
 
