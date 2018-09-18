@@ -9,7 +9,19 @@
 
 
 
+
+**Sept. 17, 2018:**
+
+
+
++ Wired up ReactRouter
++ Wired up redux
++ Created react app
++ Built prod db
+
+
 **Sept. 16, 2018:** 
+
 
 
 + Completed backend passport (google) OAUTH implementation
