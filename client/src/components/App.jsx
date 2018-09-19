@@ -1,8 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import LeftMenu from './layout/LeftMenu';
-import MainWindow from './layout/MainWindow';
-import TopNavbar from './layout/TopNavbar';
 import WarningBar from './layout/WarningBar';
 import Main from './layout/Main';
 import CssBaseline from '@material-ui/core/CssBaseline';

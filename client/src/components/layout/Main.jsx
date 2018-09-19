@@ -12,14 +12,15 @@ import Divider from '@material-ui/core/Divider';
 import MenuIcon from '@material-ui/icons/Menu';
 // import { mailFolderListItems, otherMailFolderListItems } from './tileData';
 import { Route } from 'react-router-dom'
-import MainWindow from './MainWindow';
+import MainWindowLayout from './MainWindowLayout';
+import Button from '@material-ui/core/Button';
 
 const drawerWidth = 240;
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    height: 440,
+    // height: 440,
     zIndex: 1,
     overflow: 'hidden',
     position: 'relative',
@@ -50,7 +51,12 @@ const styles = theme => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3,
-  },
+  }, 
+  buttonColor: {
+    '&:hover': {
+      backgroundColor: '#212121'
+    } 
+  }
 });
 
 class Main extends React.Component {
@@ -87,9 +93,10 @@ class Main extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="title" color="inherit" noWrap>
+            <Typography variant="title" color="inherit" noWrap style={{ flex: 1 }}>
               FAA AIR CEA
             </Typography>
+            <Button color="inherit" className={classes.buttonColor}>Login</Button>
           </Toolbar>
         </AppBar>
         <Hidden mdUp>
@@ -121,7 +128,7 @@ class Main extends React.Component {
         </Hidden>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          <Route exact path="/" component={MainWindow} />
+          <Route exact path="/" component={MainWindowLayout} />
         </main>
       </div>
     );
