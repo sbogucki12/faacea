@@ -5,23 +5,25 @@ import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 import Divider from '@material-ui/core/Divider';
 import MenuIcon from '@material-ui/icons/Menu';
 // import { mailFolderListItems, otherMailFolderListItems } from './tileData';
-import { Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import MainWindowLayout from './MainWindowLayout';
 import Button from '@material-ui/core/Button';
+import LeftDrawer from '../drawer/LeftDrawer';
+import LeftDrawerMobile from '../drawer/LeftDrawerMobile';
+import LeftDrawerNotLoggedIn from '../drawer/LeftDrawerNotLoggedIn';
 
 const drawerWidth = 240;
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    // height: 440,
+    height: 440,
     zIndex: 1,
     overflow: 'hidden',
     position: 'relative',
@@ -30,10 +32,11 @@ const styles = theme => ({
   },
   appBar: {
     position: 'absolute',
+    zIndex: theme.zIndex.drawer + 1,
     marginLeft: drawerWidth,
     [theme.breakpoints.up('md')]: {
         width: '100%',
-        zIndex: '1400',
+        zIndex: theme.zIndex.drawer + 1,
     },
   },
   navIconHide: {
@@ -43,7 +46,7 @@ const styles = theme => ({
   },
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
-    width: drawerWidth,
+    width: drawerWidth,    
     [theme.breakpoints.up('md')]: {
       position: 'relative',
     },
@@ -57,7 +60,11 @@ const styles = theme => ({
     '&:hover': {
       backgroundColor: '#212121'
     }
-  }
+  }, 
+  link: {
+    textDecoration: 'none',
+    color: 'white'
+  },  
 });
 
 class Main extends React.Component {
@@ -81,22 +88,86 @@ class Main extends React.Component {
       };
   };
 
+  renderLeftDrawer() {
+    const { classes, theme } = this.props;
+    switch (this.props.auth){
+      case null: 
+        return;
+      case false: 
+        return (
+          <Drawer
+            variant="permanent"
+            open
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+          >
+            <LeftDrawerNotLoggedIn />
+          </Drawer>
+        );
+      default: 
+          return(
+            <Drawer
+            variant="permanent"
+            open
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+          >
+            <LeftDrawer />
+          </Drawer>
+          )
+      };
+  };
+
+  renderLeftDrawerMobile() {
+    const { classes, theme } = this.props;
+    switch (this.props.auth){
+      case null: 
+        return null;
+      case false: 
+        return (
+          <Drawer
+          variant="temporary"
+          anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+          open={this.state.mobileOpen}
+          onClose={this.handleDrawerToggle}
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+        >
+          <LeftDrawerNotLoggedIn  />
+        </Drawer>
+        );
+      default: 
+          return(
+            <Drawer
+            variant="temporary"
+            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+            open={this.state.mobileOpen}
+            onClose={this.handleDrawerToggle}
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}
+          >
+            <LeftDrawerMobile  />
+          </Drawer>
+          )
+      };
+  };
+
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
 
   render() {
     const { classes, theme } = this.props;    
-
-    const drawer = (
-      <div>
-        <div className={classes.toolbar} />
-        <Divider />
-        <List>Nothing Yet!</List>
-        <Divider />
-        <List>Nothing Yet!</List>
-      </div>
-    );
 
     return (
       <div className={classes.root}>
@@ -110,46 +181,25 @@ class Main extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="title" color="inherit" noWrap style={{ flex: 1 }}>
-              FAA AIR CEA
-            </Typography>
-
-            {this.renderContent()}
             
-
-
+            <Typography variant="title" color="inherit" noWrap style={{ flex: 1 }}>
+            <Link to="/main" className={classes.link}>
+              FAA AIR CEA
+              </Link>
+            </Typography>
+            {this.renderContent()}
           </Toolbar>
         </AppBar>
         <Hidden mdUp>
-          <Drawer
-            variant="temporary"
-            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={this.state.mobileOpen}
-            onClose={this.handleDrawerToggle}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            {drawer}
-          </Drawer>
+         {this.renderLeftDrawerMobile()}
         </Hidden>
         <Hidden smDown implementation="css">
-          <Drawer
-            variant="permanent"
-            open
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-          >
-            {drawer}
-          </Drawer>
+        {this.renderLeftDrawer()}
+          
         </Hidden>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          <Route exact path="/main" component={MainWindowLayout} />
+            <MainWindowLayout />
         </main>
       </div>
     );

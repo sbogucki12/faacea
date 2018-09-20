@@ -7,13 +7,13 @@ const styles = {
  
 };
 
-function MainWindow(props) {
+function ActionDetermination(props) {
   const { classes } = props;
 
   return (
     <React.Fragment>
       <Typography variant="headline" gutterBottom align="center">
-        FAA AIR CEA
+        Action Determination
       </Typography>
       <Typography variant="subheading" gutterBottom align="center">
         (prototype)
@@ -31,8 +31,8 @@ function MainWindow(props) {
   );
 }
 
-MainWindow.propTypes = {
+ActionDetermination.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(MainWindow);
+export default withStyles(styles)(ActionDetermination);
