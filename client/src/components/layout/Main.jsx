@@ -149,7 +149,7 @@ class Main extends React.Component {
         </Hidden>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          <Route exact path="/" component={MainWindowLayout} />
+          <Route exact path="/main" component={MainWindowLayout} />
         </main>
       </div>
     );

@@ -8,6 +8,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
 import grey from '@material-ui/core/colors/grey';
+import Landing from './Landing';
 
 // const Warning = () => <h2>Warning!</h2>;
 const Home = () => <h2>Home</h2>;
@@ -38,7 +39,7 @@ class App extends React.Component{
                     <BrowserRouter>
                         <div>
                             <WarningBar />
-                            <Route exact path="/" component={Main} />
+                            <Route exact path="/" component={Landing} />
                             <Route exact path="/main" component={Main} />
                             <Route exact path="/actiondetermination" component={ActionDetermination} />
                             <Route exact path="/informalaction" component={InformalAction} />
