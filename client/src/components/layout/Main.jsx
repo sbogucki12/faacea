@@ -18,7 +18,7 @@ import LeftDrawer from '../drawer/LeftDrawer';
 import LeftDrawerMobile from '../drawer/LeftDrawerMobile';
 import LeftDrawerNotLoggedIn from '../drawer/LeftDrawerNotLoggedIn';
 
-const drawerWidth = 240;
+const drawerWidth = 260;
 
 const styles = theme => ({
   root: {
