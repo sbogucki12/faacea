@@ -10,6 +10,15 @@
 
 
 
+**Sept. 19, 2018:**
+
+
+
++ Basic authentication log in/out wired up
+
+
+
+
 
 **Sept. 18, 2018:** 
 

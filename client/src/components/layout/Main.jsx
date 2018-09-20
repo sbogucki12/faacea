@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { mapDispatchToProps } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -55,7 +56,7 @@ const styles = theme => ({
   buttonColor: {
     '&:hover': {
       backgroundColor: '#212121'
-    } 
+    }
   }
 });
 
@@ -64,12 +65,28 @@ class Main extends React.Component {
     mobileOpen: false,
   };
 
+  renderContent() {
+    const { classes } = this.props;
+    switch (this.props.auth){
+      case null: 
+        return;
+      case false: 
+        return (
+          <Button color="inherit" className={classes.buttonColor} href="/auth/google">Login</Button>
+        );
+      default: 
+          return(
+            <Button color="inherit" className={classes.buttonColor} href="/api/logout">Log Out</Button>
+          )
+      };
+  };
+
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
 
   render() {
-    const { classes, theme } = this.props;
+    const { classes, theme } = this.props;    
 
     const drawer = (
       <div>
@@ -96,7 +113,11 @@ class Main extends React.Component {
             <Typography variant="title" color="inherit" noWrap style={{ flex: 1 }}>
               FAA AIR CEA
             </Typography>
-            <Button color="inherit" className={classes.buttonColor}>Login</Button>
+
+            {this.renderContent()}
+            
+
+
           </Toolbar>
         </AppBar>
         <Hidden mdUp>
@@ -140,4 +161,8 @@ Main.propTypes = {
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(Main);
+function mapStateToProps({ auth }){
+  return { auth };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles, { withTheme: true })(Main));
