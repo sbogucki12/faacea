@@ -183,9 +183,9 @@ class Main extends React.Component {
             </IconButton>
             
             <Typography variant="title" color="inherit" noWrap style={{ flex: 1 }}>
-            <Link to="/main" className={classes.link}>
+            <a href="/main" className={classes.link}>
               FAA AIR CEA
-              </Link>
+              </a>
             </Typography>
             {this.renderContent()}
           </Toolbar>

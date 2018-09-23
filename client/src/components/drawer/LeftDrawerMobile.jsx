@@ -8,6 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import AddIcon from '@material-ui/icons/Add';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -15,6 +16,9 @@ const styles = theme => ({
     maxWidth: 360,    
     backgroundColor: theme.palette.background.paper,
   },
+  link: {
+    textDecoration: 'none'
+  }
 });
 
 function LeftDrawerMobile(props) {
@@ -26,7 +30,9 @@ function LeftDrawerMobile(props) {
           <ListItemIcon>
             <AddIcon />
           </ListItemIcon>
+          <a href="/main/action" className={classes.link}>
           <ListItemText primary="Create New Action" />
+          </a>
         </ListItem>
         <ListItem button>
           <ListItemIcon>

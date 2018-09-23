@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+import ActionDeterminationAdmin from './ActionDeterminationAdmin';
 
 const styles = {
  
@@ -18,12 +19,7 @@ function ActionDetermination(props) {
       <Typography variant="subheading" gutterBottom align="center">
         (prototype)
       </Typography>         
-      <Typography gutterBottom align="center">
-        {`
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        `}
-      </Typography>
+      <ActionDeterminationAdmin />
       <Typography variant="button" gutterBottom align="center">
         Button
       </Typography>

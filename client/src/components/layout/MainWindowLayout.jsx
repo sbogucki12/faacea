@@ -1,17 +1,37 @@
-import React from 'react';
+import React, { mapDispatchToProps } from 'react';
 import MainWindow from '../main_window/MainWindow';
+import PleaseLogIn from '../layout/PleaseLogIn';
 import { Route } from 'react-router-dom'
-import ActionDetermination from '../main_window/ActionDetermination';
+import ActionDetermination from '../action_determination/ActionDetermination';
+import { connect } from 'react-redux';
 
-const MainWindowLayout = () => {
-    return (
-        <React.Fragment>
-            
-            <Route exact path="/main" component={MainWindow} />
-            <Route exact path="/main/action" component={ActionDetermination} />
-            
-        </React.Fragment>
-    )
+class MainWindowLayout extends React.Component {
+   
+    ifAuth(){
+        const { classes } = this.props;
+        if(this.props.auth){
+            return (
+                    <Route exact path="/main/action" component={ActionDetermination} />  
+                )
+            } else {
+                return (
+                    <Route exact path="/main/action" component={PleaseLogIn} />
+                )
+            }
+        };    
+
+    render(){
+        return (
+            <React.Fragment>
+                <Route exact path="/main" component={MainWindow} />            
+                {this.ifAuth()}
+            </React.Fragment>
+        )
+    }
 };
 
-export default MainWindowLayout; 
+function mapStateToProps({ auth }){
+    return { auth };
+  };
+
+  export default connect(mapStateToProps, mapDispatchToProps)(MainWindowLayout)
