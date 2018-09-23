@@ -11,10 +11,10 @@ import { actionDeterminationChoicesAdmin } from './actionDeterminationChoice';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    display: 'flex'   
   },
   formControl: {
-    margin: theme.spacing.unit * 3,
+    margin: theme.spacing.unit * 3,    
   },
 });
 

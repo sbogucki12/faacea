@@ -23,7 +23,7 @@ const drawerWidth = 260;
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    height: 440,
+    height: "100%",
     zIndex: 1,
     overflow: 'hidden',
     position: 'relative',
@@ -54,7 +54,7 @@ const styles = theme => ({
   content: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3,
+    padding: theme.spacing.unit * 3    
   }, 
   buttonColor: {
     '&:hover': {
@@ -185,7 +185,7 @@ class Main extends React.Component {
             <Typography variant="title" color="inherit" noWrap style={{ flex: 1 }}>
             <a href="/main" className={classes.link}>
               FAA AIR CEA
-              </a>
+            </a>
             </Typography>
             {this.renderContent()}
           </Toolbar>
