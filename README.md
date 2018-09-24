@@ -10,6 +10,15 @@
 
 
 
+** Sept. 24, 2018:**
+
+
+
++ Created second Action Determination screen
+
+
+
+
 **Sept. 22, 2018:**
 
 
@@ -87,3 +96,13 @@
 
 ## To-Do: 
 
+
+[ ]  - Create tool tips for all links
+
+[ ]  - Create "Case Info" pop up for all screens
+
+[ ]  - Add Paper to Log in Screen
+
+[ ]  - Activate all links
+
+[ ] -  Create link to user guide on main window

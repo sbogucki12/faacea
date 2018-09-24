@@ -21,7 +21,7 @@ const styles = theme => ({
   }
 });
 
-function MainWindow(props) {
+function MainWindowLogin(props) {
   const { classes } = props;
 
   return (
@@ -37,10 +37,14 @@ function MainWindow(props) {
         
         <Paper elevation={6} className={classes.heading}>
           <Typography variant="headline" gutterBottom align="center">
-            FAA AIR CEA 
+            FAA AIR CEA
           </Typography>
           <Typography variant="subheading" gutterBottom align="center">
             (prototype)
+          </Typography>
+          <br />
+          <Typography variant="subheading" gutterBottom align="center">
+            Please Log In. 
           </Typography>
         </Paper>
                
@@ -50,8 +54,8 @@ function MainWindow(props) {
   );
 }
 
-MainWindow.propTypes = {
+MainWindowLogin.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(MainWindow);
+export default withStyles(styles)(MainWindowLogin);

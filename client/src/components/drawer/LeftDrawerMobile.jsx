@@ -33,13 +33,7 @@ function LeftDrawerMobile(props) {
           <a href="/main/action" className={classes.link}>
           <ListItemText primary="Create New Action" />
           </a>
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <DraftsIcon />
-          </ListItemIcon>
-          <ListItemText primary="Messages" />
-        </ListItem>
+        </ListItem>        
       </List>
       <Divider />      
     </div>

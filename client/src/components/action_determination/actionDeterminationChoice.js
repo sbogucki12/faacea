@@ -42,10 +42,26 @@ const actionDeterminationChoicesAdmin = [
 ];
 
 const actionDeterminationChoicesInformal = [
-    "The violation is not systemic in nature",
-    "The violation was to an internal procedure",
-    "Compliance can be acheived with relative ease",
-    "The violation requires correction prior to the issuance of a certificate, approval, or authorization"
+    {
+        id: 0,
+        choice: "choice0",
+        text: "The violation is not systemic in nature"
+    },
+    {
+        id: 1,
+        choice: "choice1",
+        text: "The violation was to an internal procedure"
+    },
+    {
+        id: 2,
+        choice: "choice2",
+        text: "Compliance can be acheived with relative ease"
+    },
+    {
+        id: 3,
+        choice: "choice3",
+        text: "The violation requires correction prior to the issuance of a certificate, approval, or authorization"
+    }
 ];
 
 const actionDeterminationChoicesVDR = [

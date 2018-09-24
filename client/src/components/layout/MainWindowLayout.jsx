@@ -4,6 +4,8 @@ import PleaseLogIn from '../layout/PleaseLogIn';
 import { Route } from 'react-router-dom'
 import ActionDetermination from '../action_determination/ActionDetermination';
 import { connect } from 'react-redux';
+import ActionDeterminationInformal from '../action_determination/ActionDeterminationInformal';
+import MainWindowLogin from '../main_window/MainWindowLogin';
 
 class MainWindowLayout extends React.Component {
    
@@ -11,19 +13,26 @@ class MainWindowLayout extends React.Component {
         const { classes } = this.props;
         if(this.props.auth){
             return (
-                    <Route exact path="/main/action" component={ActionDetermination} />  
+                    <React.Fragment>
+                        <Route exact path="/main/action" component={ActionDetermination} />
+                        <Route exact path="/main/action/informal" component={ActionDeterminationInformal} />
+                        <Route exact path="/main" component={MainWindow} />
+                    </React.Fragment>  
                 )
             } else {
                 return (
-                    <Route exact path="/main/action" component={PleaseLogIn} />
+                    <React.Fragment>
+                        <Route exact path="/main/action" component={PleaseLogIn} />
+                        <Route exact path="/main/action/informal" component={PleaseLogIn} />
+                        <Route exact path="/main" component={MainWindowLogin} />
+                    </React.Fragment>
                 )
             }
         };    
 
     render(){
         return (
-            <React.Fragment>
-                <Route exact path="/main" component={MainWindow} />            
+            <React.Fragment>                
                 {this.ifAuth()}
             </React.Fragment>
         )

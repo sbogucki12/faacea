@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import ActionDeterminationAdmin from './ActionDeterminationAdmin';
 import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
+import ActionDeterminationInformalList from './ActionDeterminationInformalList';
 
 const styles = theme => ({
   root: {
@@ -12,15 +11,9 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
   },
-  button: {
-    margin: theme.spacing.unit   
-  },
-  link: {
-    textDecoration: "none"
-  }
 });
 
-function ActionDetermination(props) {
+function ActionDeterminationInformal(props) {
   const { classes } = props;
 
   return (
@@ -28,22 +21,18 @@ function ActionDetermination(props) {
       <Paper className={classes.root} elevation={6}>      
         <Typography variant="headline" gutterBottom align="center">
           Action Determination
-        </Typography>        
-        <ActionDeterminationAdmin />
-        <a href="/main/action/informal" className={classes.link}>
-          <center>
-            <Button variant="outlined" color="primary" align="center" className={classes.button}>
-              Submit
-            </Button>
-          </center>
-        </a>
+        </Typography>             
+        <ActionDeterminationInformalList />
+        <Typography variant="button" gutterBottom align="center">
+          Button
+        </Typography>
       </Paper>
     </React.Fragment>
   );
 }
 
-ActionDetermination.propTypes = {
+ActionDeterminationInformal.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ActionDetermination);
+export default withStyles(styles)(ActionDeterminationInformal);
