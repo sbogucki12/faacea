@@ -1,7 +1,7 @@
 import React, { mapDispatchToProps } from 'react';
 import MainWindow from '../main_window/MainWindow';
 import PleaseLogIn from '../layout/PleaseLogIn';
-import { Route } from 'react-router-dom'
+import { Route, BrowserRouter, Switch } from 'react-router-dom'
 import ActionDetermination from '../action_determination/ActionDetermination';
 import { connect } from 'react-redux';
 import ActionDeterminationInformal from '../action_determination/ActionDeterminationInformal';
@@ -14,17 +14,25 @@ class MainWindowLayout extends React.Component {
         if(this.props.auth){
             return (
                     <React.Fragment>
-                        <Route exact path="/main/action" component={ActionDetermination} />
-                        <Route exact path="/main/action/informal" component={ActionDeterminationInformal} />
-                        <Route exact path="/main" component={MainWindow} />
+                        <BrowserRouter>
+                            <Switch>
+                                <Route exact path="/main/action" component={ActionDetermination} />
+                                <Route exact path="/main/action/informal" component={ActionDeterminationInformal} />
+                                <Route exact path="/main" component={MainWindow} />
+                            </Switch>
+                        </BrowserRouter>
                     </React.Fragment>  
                 )
             } else {
                 return (
                     <React.Fragment>
-                        <Route exact path="/main/action" component={PleaseLogIn} />
-                        <Route exact path="/main/action/informal" component={PleaseLogIn} />
-                        <Route exact path="/main" component={MainWindowLogin} />
+                        <BrowserRouter>
+                            <Switch>
+                                <Route exact path="/main/action" component={PleaseLogIn} />
+                                <Route exact path="/main/action/informal" component={PleaseLogIn} />
+                                <Route exact path="/main" component={MainWindowLogin} />
+                            </Switch>
+                        </BrowserRouter>
                     </React.Fragment>
                 )
             }

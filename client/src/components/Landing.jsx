@@ -11,7 +11,7 @@ const styles = theme => ({
     root:       {
         flexGrow: 1,
         position: 'absolute',
-        top: '10%',
+        top: '20%',
         bottom: 0,
         left: 0, 
         right: 0

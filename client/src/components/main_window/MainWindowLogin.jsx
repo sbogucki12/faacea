@@ -25,8 +25,7 @@ function MainWindowLogin(props) {
   const { classes } = props;
 
   return (
-    <React.Fragment>
-      <Paper className={classes.root} elevation={1}>
+    <React.Fragment className={classes.root}>
       <Grid
         container
         spacing={6}
@@ -34,7 +33,6 @@ function MainWindowLogin(props) {
         alignItems="center"
         justify="center"        
       >
-        
         <Paper elevation={6} className={classes.heading}>
           <Typography variant="headline" gutterBottom align="center">
             FAA AIR CEA
@@ -47,9 +45,7 @@ function MainWindowLogin(props) {
             Please Log In. 
           </Typography>
         </Paper>
-               
       </Grid>  
-      </Paper>
     </React.Fragment>
   );
 }

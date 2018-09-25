@@ -21,23 +21,25 @@ const styles = theme => ({
   }
 });
 
-function LeftDrawerMobile(props) {
-  const { classes } = props;
-  return (
-    <div className={classes.root}>
-      <List component="nav">
-        <ListItem button>
-          <ListItemIcon>
-            <AddIcon />
-          </ListItemIcon>
-          <a href="/main/action" className={classes.link}>
-          <ListItemText primary="Create New Action" />
-          </a>
-        </ListItem>        
-      </List>
-      <Divider />      
-    </div>
-  );
+class LeftDrawerMobile extends React.Component {
+  render(){
+    const { classes } = this.props;
+    return (
+      <div className={classes.root}>
+        <List component="nav">
+        <a href="/main/action" className={classes.link}>
+          <ListItem button>
+            <ListItemIcon>
+              <AddIcon />
+            </ListItemIcon>
+              <ListItemText primary="Create New Action" />
+            </ListItem>
+          </a>       
+        </List>
+        <Divider />      
+      </div>
+    );
+  }
 }
 
 LeftDrawerMobile.propTypes = {
