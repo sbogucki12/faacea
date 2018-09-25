@@ -15,6 +15,7 @@
 
 
 + Created second Action Determination screen
++ Created Regulated Entity Info screen
 
 
 
@@ -96,6 +97,8 @@
 
 ## To-Do: 
 
+
+[ ]  - Finish Regulated Entity Info Component 
 
 [ ]  - Create tool tips for all links
 

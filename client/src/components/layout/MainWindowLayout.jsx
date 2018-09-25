@@ -6,6 +6,7 @@ import ActionDetermination from '../action_determination/ActionDetermination';
 import { connect } from 'react-redux';
 import ActionDeterminationInformal from '../action_determination/ActionDeterminationInformal';
 import MainWindowLogin from '../main_window/MainWindowLogin';
+import ActionDeterminationREInfo from '../action_determination/ActionDeterminationREInfo';
 
 class MainWindowLayout extends React.Component {
    
@@ -16,6 +17,7 @@ class MainWindowLayout extends React.Component {
                     <React.Fragment>
                         <BrowserRouter>
                             <Switch>
+                                <Route exact path="/main/action/reinfo" component={ActionDeterminationREInfo}  />
                                 <Route exact path="/main/action" component={ActionDetermination} />
                                 <Route exact path="/main/action/informal" component={ActionDeterminationInformal} />
                                 <Route exact path="/main" component={MainWindow} />
@@ -31,6 +33,7 @@ class MainWindowLayout extends React.Component {
                                 <Route exact path="/main/action" component={PleaseLogIn} />
                                 <Route exact path="/main/action/informal" component={PleaseLogIn} />
                                 <Route exact path="/main" component={MainWindowLogin} />
+                                <Route exact path="/main/action/reinfo" component={PleaseLogIn}  />
                             </Switch>
                         </BrowserRouter>
                     </React.Fragment>

@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+import ActionDeterminationAdmin from './ActionDeterminationAdmin';
 import Paper from '@material-ui/core/Paper';
-import ActionDeterminationInformalList from './ActionDeterminationInformalList';
 import Button from '@material-ui/core/Button';
+import REInfo from './REInfo';
 
 const styles = theme => ({
   root: {
@@ -20,17 +21,17 @@ const styles = theme => ({
   }
 });
 
-function ActionDeterminationInformal(props) {
+function ActionDeterminationREInfo(props) {
   const { classes } = props;
 
   return (
     <React.Fragment>
       <Paper className={classes.root} elevation={6}>      
         <Typography variant="headline" gutterBottom align="center">
-          Action Determination
-        </Typography>             
-        <ActionDeterminationInformalList />
-        <a href="/main/action/reinfo" className={classes.link}>
+          Regulated Entity - Information
+        </Typography>        
+        <REInfo />
+        <a href="/main/action/informal" className={classes.link}>
           <center>
             <Button variant="outlined" color="primary" align="center" className={classes.button}>
               Submit
@@ -42,8 +43,8 @@ function ActionDeterminationInformal(props) {
   );
 }
 
-ActionDeterminationInformal.propTypes = {
+ActionDeterminationREInfo.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ActionDeterminationInformal);
+export default withStyles(styles)(ActionDeterminationREInfo);
