@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import ActionDeterminationInformalList from './ActionDeterminationInformalList';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -30,13 +31,13 @@ function ActionDeterminationInformal(props) {
           Action Determination
         </Typography>             
         <ActionDeterminationInformalList />
-        <a href="/main/action/reinfo" className={classes.link}>
+        <Link to={"/main/action/reinfo"} className={classes.link}>
           <center>
             <Button variant="outlined" color="primary" align="center" className={classes.button}>
               Submit
             </Button>
           </center>
-        </a>
+        </Link>
       </Paper>
     </React.Fragment>
   );

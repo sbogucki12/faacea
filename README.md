@@ -10,6 +10,16 @@
 
 
 
+**Oct. 2, 2018:**
+
+
+
++ Added Compliance Action Plan component 
++ Styled Regulated Info component 
+
+
+
+
 **Sept. 24, 2018:**
 
 

@@ -6,6 +6,7 @@ import ActionDeterminationAdmin from './ActionDeterminationAdmin';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import REInfo from './REInfo';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -31,13 +32,13 @@ function ActionDeterminationREInfo(props) {
           Regulated Entity - Information
         </Typography>        
         <REInfo />
-        <a href="/main/action/informal" className={classes.link}>
+        <Link to={"/main/action/capmain"} className={classes.link}>
           <center>
             <Button variant="outlined" color="primary" align="center" className={classes.button}>
               Submit
             </Button>
           </center>
-        </a>
+        </Link>
       </Paper>
     </React.Fragment>
   );
