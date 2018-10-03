@@ -6,6 +6,8 @@ import ActionDeterminationAdmin from './ActionDeterminationAdmin';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import WorkIcon from '@material-ui/icons/Work';
+import ActionInfoDialogWrapped from '../action_info/ActionInfoDialog';
 
 const styles = theme => ({
   root: {
@@ -16,16 +18,45 @@ const styles = theme => ({
   button: {
     margin: theme.spacing.unit   
   },
+  fab: {
+    position: 'absolute',
+    bottom: theme.spacing.unit * 4,
+    right: theme.spacing.unit * 4
+  },
   link: {
     textDecoration: "none"
   }
 });
 
-function ActionDetermination(props) {
-  const { classes } = props;
+class ActionDetermination extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      value: 0,
+      open: false,
+    };
+  }
 
-  return (
-    <React.Fragment>
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
+
+  handleClickOpen = () => {
+    this.setState({
+      open: true,
+    });
+  };
+
+  handleClose = value => {
+    this.setState({ selectedValue: value, open: false });
+  };
+
+  render() {
+    const { classes } = this.props;
+    const { value } = this.state;
+
+    return (
+      <React.Fragment>
       <Paper className={classes.root} elevation={6}>      
         <Typography variant="headline" gutterBottom align="center">
           Action Determination
@@ -38,9 +69,18 @@ function ActionDetermination(props) {
             </Button>
           </center>
         </Link>
+        <Button variant="fab" color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpen}>
+          <WorkIcon />
+        </Button>  
       </Paper>
+      <ActionInfoDialogWrapped
+          selectedValue={this.state.selectedValue}
+          open={this.state.open}
+          onClose={this.handleClose}
+        />    
     </React.Fragment>
-  );
+    )
+  };
 }
 
 ActionDetermination.propTypes = {

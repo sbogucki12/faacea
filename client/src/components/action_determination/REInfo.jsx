@@ -37,13 +37,23 @@ class REInfo extends React.Component {
     zipcode: '',
     age: '',
     multiline: 'Controlled',
-    currency: 'EUR',
+    currency: 'EUR'    
   };
 
   handleChange = name => event => {
     this.setState({
       [name]: event.target.value,
     });
+  };
+
+  handleClickOpen = () => {
+    this.setState({
+      open: true,
+    });
+  };
+
+  handleClose = value => {
+    this.setState({ selectedValue: value, open: false });
   };
 
   render() {
@@ -385,7 +395,7 @@ class REInfo extends React.Component {
           margin="normal"
           variant="outlined"
         /> */}
-      </form>
+      </form>       
     );
   }
 }

@@ -22,7 +22,7 @@ function CapMoreInfo(props) {
     <div>
       <Paper className={classes.root} elevation={4}>
         <Typography variant="body1" align="center" component="p" className={classes.textStyle}>
-          {`If no Corrective Action Plan (CAP) is necessary for this Compliance Action (refer to the AIR Compliance Philosophy for guidance), then you may be able to proceed to the Action Closure screen (after notifying the Regulated Entity). CEA will guide you through these steps.`}
+          {`If no Corrective Action Plan (CAP) is necessary for this Compliance Action (refer to the`}<a href="https://www.faa.gov/about/initiatives/cp/" target="_blank" rel="noreferrer noopener"> FAA Compliance Philosophy</a> {`for guidance), then you may be able to proceed to the Action Closure screen (after notifying the Regulated Entity). CEA will guide you through these steps.`}
         </Typography> 
         <br />
         <Typography variant="body1" align="center" component="p" className={classes.textStyle}>

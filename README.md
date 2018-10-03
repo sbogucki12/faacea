@@ -9,6 +9,14 @@
 
 
 
+**Oct. 3, 2018:**
+
+
+
++ Added Case Info floating action button and Case Info dialog windows
+
+
+
 
 **Oct. 2, 2018:**
 
