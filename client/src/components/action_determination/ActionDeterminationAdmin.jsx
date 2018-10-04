@@ -42,27 +42,28 @@ class ActionDeterminationAdmin extends React.Component {
     // const error = Object.values(this.state).filter(v => v).length !== 2;
     // required error={error}
     const adminChoiceList = adminChoices.map((choice) => { 
-        return (<FormControlLabel
+        return (
+        <FormControlLabel
           control={
-            <Checkbox key={choice.id} checked={this.state[choice.id]} onChange={this.handleChange(`${choice.choice}`)} value={this.state[choice.id]} />
-          }
+            <Checkbox 
+              key={choice.id} 
+              checked={this.state[choice.id]}
+              onChange={this.handleChange(`${choice.choice}`)} 
+              value={this.state[choice.id]} 
+            />
+            }
           label={`${choice.text}`}
         />)           
     })
     return (
       <div className={classes.root}> 
-        {console.log(adminChoices)} 
-              
         <FormControl component="fieldset" className={classes.formControl}>
           <FormLabel component="legend">Select ALL That Apply:</FormLabel>
-          
           <FormGroup>
-          {adminChoiceList} 
+            {adminChoiceList} 
           </FormGroup>
-         
           {/* <FormHelperText>You can display an error</FormHelperText> */}
         </FormControl>
-    
       </div>
     );
   }

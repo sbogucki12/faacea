@@ -10,14 +10,6 @@ import blue from '@material-ui/core/colors/blue';
 import grey from '@material-ui/core/colors/grey';
 import Landing from './Landing';
 
-// const Warning = () => <h2>Warning!</h2>;
-const Home = () => <h2>Home</h2>;
-const InformalAction = () => <h2>Informal Action</h2>;
-const FormalAction = () => <h2>Formal Action</h2>;
-const LegalAction = () => <h2>Legal Action</h2>;
-const DeviationRequest = () => <h2>Deviation Request</h2>; 
-const VoluntaryDisclosure = () => <h2>VDR</h2>;
-
 const theme = createMuiTheme({
     palette: {
         primary: blue,
@@ -39,12 +31,7 @@ class App extends React.Component{
                         <div>
                             <WarningBar />
                             <Route exact path="/" component={Landing} />
-                            <Route path="/main" component={Main} /> 
-                            <Route exact path="/informalaction" component={InformalAction} />
-                            <Route exact path="/formalaction" component={FormalAction} />
-                            <Route exact path="/legalaction" component={LegalAction} />
-                            <Route exact path="/deviationrequest" component={DeviationRequest} />
-                            <Route exact path="/voluntarydisclosure" component={VoluntaryDisclosure} />
+                            <Route path="/main" component={Main} />                             
                         </div>
                     </BrowserRouter>
                 </MuiThemeProvider>

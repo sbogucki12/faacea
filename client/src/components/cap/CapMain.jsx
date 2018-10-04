@@ -10,6 +10,7 @@ import CapMoreInfo from './CapMoreInfo';
 import Paper from '@material-ui/core/Paper';
 import WorkIcon from '@material-ui/icons/Work';
 import ReInfoDialogWrapped from '../action_info/ReInfoDialog';
+import { Link } from 'react-router-dom';
 
 const theme = createMuiTheme({
   palette: {
@@ -27,10 +28,13 @@ const styles = theme => ({
     button: {
         margin: theme.spacing.unit    
     },
-    fab: {
+    fab:    {
         position: 'absolute',
         bottom: theme.spacing.unit * 6,
         right: theme.spacing.unit * 5
+    },
+    link:   {
+        textDecoration: "none"
     }
 });
 
@@ -74,9 +78,11 @@ class CapMain extends React.Component {
                         </Typography>
                         <br />
                         <center>
-                            <Button variant="outlined" color="primary" className={classes.button}>
-                                Yes
-                            </Button>
+                            <Link to={"/main/action/capupload"} className={classes.link}>
+                                <Button variant="outlined" color="primary" className={classes.button}>
+                                    Yes
+                                </Button>
+                            </Link>
                             <Button variant="outlined" color="secondary" className={classes.button}>
                                 No
                             </Button>
@@ -84,7 +90,14 @@ class CapMain extends React.Component {
                                 More Info
                             </Button>
                         </center>
-                        <Button variant="fab" color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpen}>
+                        <Button 
+                            variant="fab" 
+                            color="primary" 
+                            mini 
+                            aria-label="Action Info" 
+                            className={classes.fab} 
+                            onClick={this.handleClickOpen}
+                        >
                             <WorkIcon />
                         </Button> 
                     </Paper>

@@ -37,7 +37,7 @@ class ActionDetermination extends React.Component {
     };
   }
 
-  handleChange = (event, value) => {
+  handleChange = (value) => {
     this.setState({ value });
   };
 
@@ -53,26 +53,25 @@ class ActionDetermination extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { value } = this.state;
-
+    
     return (
       <React.Fragment>
-      <Paper className={classes.root} elevation={6}>      
-        <Typography variant="headline" gutterBottom align="center">
-          Action Determination
-        </Typography>        
-        <ActionDeterminationAdmin />
-        <Link to={"/main/action/informal"} className={classes.link}>
-          <center>
-            <Button variant="outlined" color="primary" align="center" className={classes.button}>
-              Submit
-            </Button>
-          </center>
-        </Link>
-        <Button variant="fab" color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpen}>
-          <WorkIcon />
-        </Button>  
-      </Paper>
+        <Paper className={classes.root} elevation={6}>      
+          <Typography variant="headline" gutterBottom align="center">
+            Action Determination
+          </Typography>        
+          <ActionDeterminationAdmin />
+          <Link to={"/main/action/informal"} className={classes.link}>
+            <center>
+              <Button variant="outlined" color="primary" align="center" className={classes.button}>
+                Submit
+              </Button>
+            </center>
+          </Link>
+          <Button variant="fab" mini color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpen}>
+            <WorkIcon />
+          </Button>  
+        </Paper>
       <ActionInfoDialogWrapped
           selectedValue={this.state.selectedValue}
           open={this.state.open}

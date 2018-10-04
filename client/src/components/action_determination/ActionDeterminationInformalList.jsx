@@ -47,15 +47,11 @@ class ActionDeterminationInformalList extends React.Component {
     })
     return (
       <div className={classes.root}> 
-        {console.log(adminChoices)} 
-              
         <FormControl component="fieldset" className={classes.formControl}>
           <FormLabel component="legend">Select ALL That Apply:</FormLabel>
-          
           <FormGroup>
           {adminChoiceList} 
           </FormGroup>
-         
           {/* <FormHelperText>You can display an error</FormHelperText> */}
         </FormControl>    
       </div>

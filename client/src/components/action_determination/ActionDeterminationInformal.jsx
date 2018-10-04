@@ -62,7 +62,7 @@ class ActionDeterminationInformal extends React.Component {
               </Button>
             </center>
           </Link>
-          <Button variant="fab" color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpen}>
+          <Button variant="fab" mini color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpen}>
             <WorkIcon />
           </Button>  
         </Paper>

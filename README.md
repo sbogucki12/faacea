@@ -14,6 +14,7 @@
 
 
 + Added Case Info floating action button and Case Info dialog windows
++ Added CAP Upload screen
 
 
 

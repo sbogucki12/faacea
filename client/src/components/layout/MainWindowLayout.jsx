@@ -8,6 +8,7 @@ import ActionDeterminationInformal from '../action_determination/ActionDetermina
 import MainWindowLogin from '../main_window/MainWindowLogin';
 import ActionDeterminationREInfo from '../action_determination/ActionDeterminationREInfo';
 import CapMain from '../cap/CapMain';
+import CapUploadMain from '../cap/CapUploadMain';
 
 class MainWindowLayout extends React.Component {
    
@@ -18,6 +19,7 @@ class MainWindowLayout extends React.Component {
                     <React.Fragment>
                         <BrowserRouter>
                             <Switch>
+                                <Route exact path="/main/action/capupload" component={CapUploadMain}  />
                                 <Route exact path="/main/action/capmain" component={CapMain}  />
                                 <Route exact path="/main/action/reinfo" component={ActionDeterminationREInfo}  />
                                 <Route exact path="/main/action" component={ActionDetermination} />
@@ -32,6 +34,7 @@ class MainWindowLayout extends React.Component {
                     <React.Fragment>
                         <BrowserRouter>
                             <Switch>
+                                <Route exact path="/main/action/capupload" component={PleaseLogIn}  />
                                 <Route exact path="/main/action/capmain" component={PleaseLogIn} />
                                 <Route exact path="/main/action" component={PleaseLogIn} />
                                 <Route exact path="/main/action/informal" component={PleaseLogIn} />

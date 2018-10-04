@@ -24,8 +24,8 @@ const styles = theme => ({
   },
   fab: {
     position: 'absolute',
-    bottom: theme.spacing.unit * 4,
-    right: theme.spacing.unit * 4
+    bottom: theme.spacing.unit * 6,
+    right: theme.spacing.unit * 6   
   }
 });
 
@@ -64,7 +64,7 @@ class ActionDeterminationREInfo extends React.Component{
               </Button>
             </center>
           </Link>
-          <Button variant="fab" color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpen}>
+          <Button variant="fab" mini color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpen}>
             <WorkIcon />
           </Button>
         </Paper>
