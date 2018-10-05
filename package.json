@@ -23,6 +23,7 @@
     "mongoose": "^5.2.14",
     "nodemon": "^1.18.4",
     "passport": "^0.4.0",
-    "passport-google-oauth20": "^1.0.0"
+    "passport-google-oauth20": "^1.0.0",
+    "react-responsive": "^5.0.0"
   }
 }

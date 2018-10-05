@@ -17,6 +17,10 @@ import Paper from '@material-ui/core/Paper';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import WorkIcon from '@material-ui/icons/Work';
 import ReInfoDialogWrapped from '../action_info/ReInfoDialog';
+import CapTable from './CapTable';
+import MediaQuery from 'react-responsive';
+import CapTableMobile from './CapTableMobile';
+
 
 const styles = theme => ({
     appBar:   {
@@ -41,8 +45,8 @@ const styles = theme => ({
     },
     fab: {
         position: 'absolute',
-        bottom: theme.spacing.unit * 6,
-        right: theme.spacing.unit * 6   
+        bottom: theme.spacing.unit * 4,
+        right: theme.spacing.unit * 4  
     }
 });
 
@@ -101,6 +105,15 @@ class CapUploadMain extends React.Component {
             <Button variant="fab" mini color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpenDialog}>
                 <WorkIcon />
             </Button>
+        </Paper>
+        <br />
+        <Paper className={classes.root} elevation={6}>
+            <MediaQuery minDeviceWidth={350}>
+                <CapTable />
+            </MediaQuery>
+            {/* <MediaQuery maxDeviceWidth={349}>
+                <CapTableMobile />
+            </MediaQuery> */}
         </Paper>
         <ReInfoDialogWrapped
             selectedValue={this.state.selectedValue}
