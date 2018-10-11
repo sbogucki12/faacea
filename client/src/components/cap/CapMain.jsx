@@ -11,6 +11,9 @@ import Paper from '@material-ui/core/Paper';
 import WorkIcon from '@material-ui/icons/Work';
 import ReInfoDialogWrapped from '../action_info/ReInfoDialog';
 import { Link } from 'react-router-dom';
+import StatusBarMain from '../status_bar/StatusBarMain';
+import MediaQuery from 'react-responsive';
+import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
 
 const theme = createMuiTheme({
   palette: {
@@ -68,6 +71,12 @@ class CapMain extends React.Component {
         return (
             <div>                
                 <MuiThemeProvider theme={theme}>
+                    <MediaQuery minDeviceWidth={350}>
+                        <StatusBarMain />
+                    </MediaQuery>
+                    <MediaQuery maxDeviceWidth={349}>
+                        <StatusBarMainMobile />
+                    </MediaQuery>
                     <Paper className={classes.root} elevation={6}>
                         <Typography variant="headline" gutterBottom align="center">
                             {`Corrective Action Plan`}

@@ -9,6 +9,9 @@ import REInfo from './REInfo';
 import { Link } from 'react-router-dom';
 import WorkIcon from '@material-ui/icons/Work';
 import InformalInfoDialogWrapped from '../action_info/InformalInfoDialog';
+import MediaQuery from 'react-responsive';
+import StatusBarMain from '../status_bar/StatusBarMain';
+import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
 
 const styles = theme => ({
   root: {
@@ -52,6 +55,12 @@ class ActionDeterminationREInfo extends React.Component{
 
     return (
       <React.Fragment>
+        <MediaQuery minDeviceWidth={350}>
+          <StatusBarMain />
+        </MediaQuery>
+        <MediaQuery maxDeviceWidth={349}>
+          <StatusBarMainMobile />
+        </MediaQuery>
         <Paper className={classes.root} elevation={6}>      
           <Typography variant="headline" gutterBottom align="center">
             Regulated Entity - Information

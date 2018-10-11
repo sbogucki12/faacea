@@ -8,6 +8,9 @@ import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import WorkIcon from '@material-ui/icons/Work';
 import ActionInfoDialogWrapped from '../action_info/ActionInfoDialog';
+import MediaQuery from 'react-responsive';
+import StatusBarMain from '../status_bar/StatusBarMain';
+import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
 
 const styles = theme => ({
   root: {
@@ -56,6 +59,12 @@ class ActionDetermination extends React.Component {
     
     return (
       <React.Fragment>
+        <MediaQuery minDeviceWidth={350}>
+          <StatusBarMain />
+        </MediaQuery>
+        <MediaQuery maxDeviceWidth={349}>
+          <StatusBarMainMobile />
+        </MediaQuery>
         <Paper className={classes.root} elevation={6}>      
           <Typography variant="headline" gutterBottom align="center">
             Action Determination

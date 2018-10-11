@@ -9,6 +9,7 @@ import Divider from '@material-ui/core/Divider';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import AddIcon from '@material-ui/icons/Add';
 import { Link } from 'react-router-dom';
+import DrawerList from './DrawerList';
 
 const styles = theme => ({
   root: {
@@ -26,17 +27,7 @@ class LeftDrawerMobile extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <List component="nav">
-        <a href="/main/action" className={classes.link}>
-          <ListItem button>
-            <ListItemIcon>
-              <AddIcon />
-            </ListItemIcon>
-              <ListItemText primary="Create New Action" />
-            </ListItem>
-          </a>       
-        </List>
-        <Divider />      
+        <DrawerList />
       </div>
     );
   }

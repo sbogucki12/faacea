@@ -9,6 +9,16 @@
 
 
 
+**Oct. 10, 2018:**
+
+
+
++ Added more links to drawer
++ Started building status bar
+
+
+
+
 **Oct. 3, 2018:**
 
 
@@ -116,6 +126,8 @@
 
 ## To-Do: 
 
+
+[ ]  - Transfar case info functions from FAB to status bar
 
 [ ]  - Finish Regulated Entity Info Component 
 

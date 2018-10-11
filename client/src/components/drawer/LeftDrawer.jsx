@@ -11,6 +11,7 @@ import AddIcon from '@material-ui/icons/Add';
 import { Link } from 'react-router-dom';
 import Tooltip from '@material-ui/core/Tooltip';
 import { addNewActionToolTip } from './tooltipsText';
+import DrawerList from './DrawerList';
 
 const styles = theme => ({
   root: {
@@ -30,19 +31,7 @@ class LeftDrawer extends React.Component {
 
     return (
       <div className={classes.root}>
-        <List component="nav">
-        <a href='/main/action' className={classes.link}>
-        <Tooltip disableFocusListener disableTouchListener title={addNewActionToolTip}>
-          <ListItem button>
-            <ListItemIcon>
-              <AddIcon />
-            </ListItemIcon>
-              <ListItemText primary="Create New Action" />
-            </ListItem>
-          </Tooltip>
-          </a>        
-        </List>
-        <Divider />      
+        <DrawerList />
       </div>
     );
   }

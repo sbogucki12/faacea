@@ -9,6 +9,9 @@ import MainWindowLogin from '../main_window/MainWindowLogin';
 import ActionDeterminationREInfo from '../action_determination/ActionDeterminationREInfo';
 import CapMain from '../cap/CapMain';
 import CapUploadMain from '../cap/CapUploadMain';
+import StatusBarMain from '../status_bar/StatusBarMain';
+import MediaQuery from 'react-responsive';
+import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
 
 class MainWindowLayout extends React.Component {
    
@@ -49,7 +52,7 @@ class MainWindowLayout extends React.Component {
 
     render(){
         return (
-            <React.Fragment>                
+            <React.Fragment>
                 {this.ifAuth()}
             </React.Fragment>
         )

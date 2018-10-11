@@ -18,9 +18,10 @@ import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import WorkIcon from '@material-ui/icons/Work';
 import ReInfoDialogWrapped from '../action_info/ReInfoDialog';
 import CapTable from './CapTable';
-import MediaQuery from 'react-responsive';
 import CapTableMobile from './CapTableMobile';
-
+import MediaQuery from 'react-responsive';
+import StatusBarMain from '../status_bar/StatusBarMain';
+import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
 
 const styles = theme => ({
     appBar:   {
@@ -82,6 +83,12 @@ class CapUploadMain extends React.Component {
     const { classes } = this.props;
     return (
       <div>
+        <MediaQuery minDeviceWidth={350}>
+            <StatusBarMain />
+        </MediaQuery>
+        <MediaQuery maxDeviceWidth={349}>
+            <StatusBarMainMobile />
+        </MediaQuery>
         <Paper className={classes.root} elevation={6}>
             <Typography variant="headline" gutterBottom align="center">
                 {`Corrective Action Plan`}
