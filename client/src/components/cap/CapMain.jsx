@@ -69,14 +69,14 @@ class CapMain extends React.Component {
     render(){
         const { classes } = this.props;
         return (
-            <div>                
+            <div> 
+                <MediaQuery minDeviceWidth={350}>
+                    <StatusBarMain />
+                </MediaQuery>
+                <MediaQuery maxDeviceWidth={349}>
+                    <StatusBarMainMobile />
+                </MediaQuery>               
                 <MuiThemeProvider theme={theme}>
-                    <MediaQuery minDeviceWidth={350}>
-                        <StatusBarMain />
-                    </MediaQuery>
-                    <MediaQuery maxDeviceWidth={349}>
-                        <StatusBarMainMobile />
-                    </MediaQuery>
                     <Paper className={classes.root} elevation={6}>
                         <Typography variant="headline" gutterBottom align="center">
                             {`Corrective Action Plan`}
