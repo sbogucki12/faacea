@@ -115,7 +115,7 @@ class CapUploadMain extends React.Component {
         </Paper>
         <br />
         <Paper className={classes.root} elevation={6}>
-            <MediaQuery minDeviceWidth={350}>
+            <MediaQuery minDeviceWidth={700}>
                 <CapTable />
             </MediaQuery>
             {/* <MediaQuery maxDeviceWidth={349}>
