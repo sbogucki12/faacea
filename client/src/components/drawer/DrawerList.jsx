@@ -39,7 +39,7 @@ class DrawerList extends React.Component {
     return (
       <div className={classes.root}>
         <List component="nav">
-            <a href='/main/action' className={classes.link}>
+            <a href='/main/action/processmap' className={classes.link}>
                 <Tooltip disableFocusListener disableTouchListener title={addNewActionToolTip}>
                     <ListItem
                     button

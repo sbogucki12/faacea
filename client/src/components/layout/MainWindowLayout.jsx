@@ -12,6 +12,7 @@ import CapUploadMain from '../cap/CapUploadMain';
 import StatusBarMain from '../status_bar/StatusBarMain';
 import MediaQuery from 'react-responsive';
 import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
+import ProcessMapMain from '../process_map/ProcessMapMain';
 
 class MainWindowLayout extends React.Component {
    
@@ -22,6 +23,7 @@ class MainWindowLayout extends React.Component {
                     <React.Fragment>
                         <BrowserRouter>
                             <Switch>
+                                <Route exact path="/main/action/processmap" component={ProcessMapMain}  />
                                 <Route exact path="/main/action/capupload" component={CapUploadMain}  />
                                 <Route exact path="/main/action/capmain" component={CapMain}  />
                                 <Route exact path="/main/action/reinfo" component={ActionDeterminationREInfo}  />
@@ -37,6 +39,7 @@ class MainWindowLayout extends React.Component {
                     <React.Fragment>
                         <BrowserRouter>
                             <Switch>
+                                <Route exact path="/main/action/processmap" component={PleaseLogIn}  />
                                 <Route exact path="/main/action/capupload" component={PleaseLogIn}  />
                                 <Route exact path="/main/action/capmain" component={PleaseLogIn} />
                                 <Route exact path="/main/action" component={PleaseLogIn} />

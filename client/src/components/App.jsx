@@ -9,6 +9,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
 import grey from '@material-ui/core/colors/grey';
 import Landing from './Landing';
+import 'typeface-roboto';
 
 const theme = createMuiTheme({
     palette: {
