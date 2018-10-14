@@ -31,7 +31,7 @@ function MainWindowLogin(props) {
   const { classes } = props;
 
   return (
-    <React.Fragment className={classes.root}>
+    <div className={classes.root}>
       <Grid
         container
         spacing={6}
@@ -40,14 +40,14 @@ function MainWindowLogin(props) {
         justify="center"        
       >
         <Paper elevation={6} className={classes.heading}>
-          <Typography variant="headline" gutterBottom align="center">
-            FAA AIR CEA
+          <Typography component="h2" variant="display2" gutterBottom align="center">
+            {`FAA AIR CEA`} 
           </Typography>
-          <Typography variant="subheading" gutterBottom align="center">
-            (prototype)
+          <Typography variant="caption" gutterBottom align="center">
+            {`(prototype)`}
           </Typography>
           <br />
-          <Typography variant="subheading" gutterBottom align="center">
+          <Typography variant="button" gutterBottom align="center">
             Please Log In. 
           </Typography>
         </Paper>
@@ -56,7 +56,7 @@ function MainWindowLogin(props) {
           <IntroText />
         </Paper>
       </Grid>  
-    </React.Fragment>
+    </div>
   );
 }
 

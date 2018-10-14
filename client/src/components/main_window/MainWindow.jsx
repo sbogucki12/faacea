@@ -31,7 +31,7 @@ function MainWindow(props) {
   const { classes } = props;
 
   return (
-    <React.Fragment className={classes.root}>
+    <div className={classes.root}>
       <Grid
         container
         spacing={6}
@@ -52,7 +52,7 @@ function MainWindow(props) {
           <IntroText />
         </Paper>
       </Grid>
-    </React.Fragment>
+    </div>
   );
 }
 

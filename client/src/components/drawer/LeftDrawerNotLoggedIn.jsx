@@ -15,6 +15,9 @@ const styles = theme => ({
     marginTop: '30%',
     backgroundColor: theme.palette.background.paper,
   },
+  link: {
+    textDecoration: "none"
+  }
 });
 
 function LeftDrawerNotLoggedIn(props) {
@@ -22,12 +25,14 @@ function LeftDrawerNotLoggedIn(props) {
   return (
     <div className={classes.root}>
       <List component="nav">
-        <ListItem button>
-          <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon>
-          <ListItemText primary="Please Log In" />
-        </ListItem>        
+        <a href="/auth/google" className={classes.link}>
+          <ListItem button>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText primary="Please Log In" />
+          </ListItem>
+        </a>        
       </List>
       <Divider />      
     </div>

@@ -10,6 +10,15 @@
 
 
 
+**Oct. 14, 2018:** 
+
+
+
++ Created Correspondence Types component
+
+
+
+
 **Oct. 11, 2018:**
 
 
@@ -137,7 +146,7 @@
 ## To-Do: 
 
 
-[ ]  - Transfar case info functions from FAB to status bar
+[ ]  - Transfer case info functions from FAB to status bar
 
 [ ]  - Finish Regulated Entity Info Component 
 

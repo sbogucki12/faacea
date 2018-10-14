@@ -12,12 +12,12 @@ function PleaseLogIn(props) {
 
   return (
     <React.Fragment>
-      <Typography variant="headline" gutterBottom align="center">
-        FAA AIR CEA
-      </Typography>
-      <Typography variant="subheading" gutterBottom align="center">
-        (prototype)
-      </Typography>         
+     <Typography component="h2" variant="display2" gutterBottom align="center">
+            {`FAA AIR CEA`} 
+          </Typography>
+          <Typography variant="caption" gutterBottom align="center">
+            {`(prototype)`}
+          </Typography>
       <Typography gutterBottom align="center">
         {`
           Please Log In

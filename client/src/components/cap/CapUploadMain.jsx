@@ -22,6 +22,7 @@ import CapTableMobile from './CapTableMobile';
 import MediaQuery from 'react-responsive';
 import StatusBarMain from '../status_bar/StatusBarMain';
 import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
+import CapProceed from './CapProceed';
 
 const styles = theme => ({
     appBar:   {
@@ -114,14 +115,14 @@ class CapUploadMain extends React.Component {
             </Button>
         </Paper>
         <br />
-        <Paper className={classes.root} elevation={6}>
-            <MediaQuery minDeviceWidth={700}>
+        <MediaQuery minDeviceWidth={700}>
+            <Paper className={classes.root} elevation={6}>
                 <CapTable />
-            </MediaQuery>
-            {/* <MediaQuery maxDeviceWidth={349}>
-                <CapTableMobile />
-            </MediaQuery> */}
-        </Paper>
+                {/* <MediaQuery maxDeviceWidth={349}>
+                    <CapTableMobile />
+                </MediaQuery> */}
+            </Paper>
+        </MediaQuery>
         <ReInfoDialogWrapped
             selectedValue={this.state.selectedValue}
             open={this.state.dialogOpen}
@@ -173,6 +174,7 @@ class CapUploadMain extends React.Component {
             </ListItem>
           </List> */}
         </Dialog>
+        <CapProceed />
       </div>
     );
   }
