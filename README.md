@@ -9,6 +9,15 @@
 
 
 
+**Oct. 15, 2018:**
+
+
+
++ Added Help dialogs to all Action screens
++ Created the Upload Correspondence Screen
+
+
+
 
 **Oct. 14, 2018:** 
 
@@ -145,6 +154,10 @@
 
 ## To-Do: 
 
+
+[ ] -  Add table of correspondence 
+
+[ ] -  Finish Action Summary page
 
 [ ]  - Transfer case info functions from FAB to status bar
 

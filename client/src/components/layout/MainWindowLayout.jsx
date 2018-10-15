@@ -9,12 +9,10 @@ import MainWindowLogin from '../main_window/MainWindowLogin';
 import ActionDeterminationREInfo from '../action_determination/ActionDeterminationREInfo';
 import CapMain from '../cap/CapMain';
 import CapUploadMain from '../cap/CapUploadMain';
-import StatusBarMain from '../status_bar/StatusBarMain';
-import MediaQuery from 'react-responsive';
-import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
 import ProcessMapMain from '../process_map/ProcessMapMain';
 import SelectCorrespondenceMain from '../correspondence/SelectCorrespondenceMain';
 import SummaryMain from '../summary/SummaryMain';
+import UploadCorrespondenceMain from '../correspondence/UploadCorrespondenceMain';
 
 class MainWindowLayout extends React.Component {
    
@@ -25,6 +23,7 @@ class MainWindowLayout extends React.Component {
                     <React.Fragment>
                         <BrowserRouter>
                             <Switch>
+                                <Route exact path="/main/action/uploadcorrespondence" component={UploadCorrespondenceMain} />
                                 <Route exact path="/main/action/actionsummary" component={SummaryMain}  />
                                 <Route exact path="/main/action/selectcorrespondence" component={SelectCorrespondenceMain}  />
                                 <Route exact path="/main/action/processmap" component={ProcessMapMain}  />
@@ -43,6 +42,7 @@ class MainWindowLayout extends React.Component {
                     <React.Fragment>
                         <BrowserRouter>
                             <Switch>
+                                <Route exact path="/main/action/uploadcorrespondence" component={PleaseLogIn}  />
                                 <Route exact path="/main/action/actionsummary" component={PleaseLogIn}  />
                                 <Route exact path="/main/action/selectcorrespondence" component={PleaseLogIn}  />
                                 <Route exact path="/main/action/processmap" component={PleaseLogIn}  />

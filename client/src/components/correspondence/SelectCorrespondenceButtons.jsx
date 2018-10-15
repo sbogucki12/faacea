@@ -54,7 +54,7 @@ class SelectCorrespondenceButtons extends React.Component {
               <Button variant="outlined" color="secondary" className={classes.button} onClick={this.handleClickOpen}>
                   {`Review Selections`}
               </Button>
-              <Link to="/main/action/actionsummary" className={classes.link}>
+              <Link to="/main/action/uploadcorrespondence" className={classes.link}>
                 <Button variant="outlined" color="primary" className={classes.button}>
                     {`Save & Proceed`}
                 </Button>

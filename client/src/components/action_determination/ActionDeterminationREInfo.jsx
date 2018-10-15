@@ -2,13 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import ActionDeterminationAdmin from './ActionDeterminationAdmin';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import REInfo from './REInfo';
 import { Link } from 'react-router-dom';
-import WorkIcon from '@material-ui/icons/Work';
-import InformalInfoDialogWrapped from '../action_info/InformalInfoDialog';
+import HelpIcon from '@material-ui/icons/Help';
+import ReInfoHelpDialogWrapped from '../help_dialogs/ReInfoHelpDialog';
 import MediaQuery from 'react-responsive';
 import StatusBarMain from '../status_bar/StatusBarMain';
 import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
@@ -62,7 +61,7 @@ class ActionDeterminationREInfo extends React.Component{
           <StatusBarMainMobile />
         </MediaQuery>
         <Paper className={classes.root} elevation={6}>      
-          <Typography variant="headline" gutterBottom align="center">
+          <Typography variant="display1" gutterBottom align="center">
             Regulated Entity - Information
           </Typography>        
           <REInfo />
@@ -74,10 +73,10 @@ class ActionDeterminationREInfo extends React.Component{
             </center>
           </Link>
           <Button variant="fab" mini color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpen}>
-            <WorkIcon />
+            <HelpIcon />
           </Button>
         </Paper>
-        <InformalInfoDialogWrapped
+        <ReInfoHelpDialogWrapped
           selectedValue={this.state.selectedValue}
           open={this.state.open}
           onClose={this.handleClose}

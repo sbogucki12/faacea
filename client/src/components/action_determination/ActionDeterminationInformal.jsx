@@ -6,8 +6,8 @@ import Paper from '@material-ui/core/Paper';
 import ActionDeterminationInformalList from './ActionDeterminationInformalList';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import WorkIcon from '@material-ui/icons/Work';
-import AdminInfoDialogWrapped from '../action_info/AdminInfoDialog';
+import HelpIcon from '@material-ui/icons/Help';
+import InformalHelpDialogWrapped from '../help_dialogs/InformalHelpDialog';
 import MediaQuery from 'react-responsive';
 import StatusBarMain from '../status_bar/StatusBarMain';
 import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
@@ -60,7 +60,7 @@ class ActionDeterminationInformal extends React.Component {
           <StatusBarMainMobile />
         </MediaQuery>
         <Paper className={classes.root} elevation={6}>      
-          <Typography variant="headline" gutterBottom align="center">
+          <Typography variant="display1" gutterBottom align="center">
             Action Determination
           </Typography>             
           <ActionDeterminationInformalList />
@@ -72,10 +72,10 @@ class ActionDeterminationInformal extends React.Component {
             </center>
           </Link>
           <Button variant="fab" mini color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpen}>
-            <WorkIcon />
+            <HelpIcon />
           </Button>  
         </Paper>
-        <AdminInfoDialogWrapped
+        <InformalHelpDialogWrapped
           selectedValue={this.state.selectedValue}
           open={this.state.open}
           onClose={this.handleClose}

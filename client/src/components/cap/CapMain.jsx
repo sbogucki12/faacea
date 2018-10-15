@@ -8,8 +8,8 @@ import lightBlue from '@material-ui/core/colors/lightBlue';
 import blue from '@material-ui/core/colors/blue';
 import CapMoreInfo from './CapMoreInfo';
 import Paper from '@material-ui/core/Paper';
-import WorkIcon from '@material-ui/icons/Work';
-import ReInfoDialogWrapped from '../action_info/ReInfoDialog';
+import HelpIcon from '@material-ui/icons/Help';
+import CapUploadHelpDialogWrapped from '../help_dialogs/CapUploadHelpDialog';
 import { Link } from 'react-router-dom';
 import StatusBarMain from '../status_bar/StatusBarMain';
 import MediaQuery from 'react-responsive';
@@ -78,7 +78,7 @@ class CapMain extends React.Component {
                 </MediaQuery>               
                 <MuiThemeProvider theme={theme}>
                     <Paper className={classes.root} elevation={6}>
-                        <Typography variant="headline" gutterBottom align="center">
+                        <Typography variant="display1" gutterBottom align="center">
                             {`Corrective Action Plan`}
                         </Typography>
                         <br />    
@@ -92,9 +92,11 @@ class CapMain extends React.Component {
                                     Yes
                                 </Button>
                             </Link>
-                            <Button variant="outlined" color="secondary" className={classes.button}>
-                                No
-                            </Button>
+                            <Link to={"/main/action/selectcorrespondence"} className={classes.link}>
+                                <Button variant="outlined" color="secondary" className={classes.button}>
+                                    No
+                                </Button>
+                            </Link>
                             <Button variant="outlined" className={classes.button} onClick={this.showMoreInfo}>
                                 More Info
                             </Button>
@@ -107,12 +109,12 @@ class CapMain extends React.Component {
                             className={classes.fab} 
                             onClick={this.handleClickOpen}
                         >
-                            <WorkIcon />
+                            <HelpIcon />
                         </Button> 
                     </Paper>
                     <br />
                     {this.state.moreInfo ? <CapMoreInfo /> : null }
-                    <ReInfoDialogWrapped
+                    <CapUploadHelpDialogWrapped
                         selectedValue={this.state.selectedValue}
                         open={this.state.open}
                         onClose={this.handleClose}

@@ -24,7 +24,7 @@ function ProcessMapHeader(props) {
   return (
     <div className={classes.root}>
       <Paper className={classes.paperRoot} elevation={6}>
-        <Typography component="h2" variant="headline" gutterBottom align="center">
+        <Typography component="h2" variant="display1" gutterBottom align="center">
             {`Compliance Action Process`}
         </Typography>
         <Typography variant="caption" gutterBottom align="center">

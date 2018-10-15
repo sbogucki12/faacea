@@ -6,8 +6,8 @@ import ActionDeterminationAdmin from './ActionDeterminationAdmin';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import WorkIcon from '@material-ui/icons/Work';
-import ActionInfoDialogWrapped from '../action_info/ActionInfoDialog';
+import HelpIcon from '@material-ui/icons/Help';
+import AdminHelpDialogWrapped from '../help_dialogs/AdminHelpDialog';
 import MediaQuery from 'react-responsive';
 import StatusBarMain from '../status_bar/StatusBarMain';
 import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
@@ -66,7 +66,7 @@ class ActionDetermination extends React.Component {
           <StatusBarMainMobile />
         </MediaQuery>
         <Paper className={classes.root} elevation={6}>      
-          <Typography variant="headline" gutterBottom align="center">
+          <Typography variant="display1" gutterBottom align="center">
             Action Determination
           </Typography>        
           <ActionDeterminationAdmin />
@@ -78,10 +78,10 @@ class ActionDetermination extends React.Component {
             </center>
           </Link>
           <Button variant="fab" mini color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpen}>
-            <WorkIcon />
+            <HelpIcon />
           </Button>  
         </Paper>
-      <ActionInfoDialogWrapped
+        <AdminHelpDialogWrapped
           selectedValue={this.state.selectedValue}
           open={this.state.open}
           onClose={this.handleClose}

@@ -16,9 +16,9 @@ const styles = theme => ({
   heading: {
     paddingTop: "5px",
     paddingBottom: "5px",
-    paddingLeft: "20%",
-    paddingRight: "20%",
-    marginTop: "2%" 
+    paddingLeft: "15%",
+    paddingRight: "15%",
+    marginTop: 0
   }, 
   body: {
     maxWidth: "80%", 

@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItem from '@material-ui/core/ListItem';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -15,10 +11,9 @@ import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import Paper from '@material-ui/core/Paper';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
-import WorkIcon from '@material-ui/icons/Work';
-import ReInfoDialogWrapped from '../action_info/ReInfoDialog';
+import HelpIcon from '@material-ui/icons/Help';
+import CapUploadHelpDialogWrapped from '../help_dialogs/CapUploadHelpDialog';
 import CapTable from './CapTable';
-import CapTableMobile from './CapTableMobile';
 import MediaQuery from 'react-responsive';
 import StatusBarMain from '../status_bar/StatusBarMain';
 import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
@@ -91,7 +86,7 @@ class CapUploadMain extends React.Component {
             <StatusBarMainMobile />
         </MediaQuery>
         <Paper className={classes.root} elevation={6}>
-            <Typography variant="headline" gutterBottom align="center">
+            <Typography variant="display1" gutterBottom align="center">
                 {`Corrective Action Plan`}
             </Typography>
             <br />
@@ -111,7 +106,7 @@ class CapUploadMain extends React.Component {
                 </Button>
             </center>
             <Button variant="fab" mini color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpenDialog}>
-                <WorkIcon />
+                <HelpIcon />
             </Button>
         </Paper>
         <br />
@@ -123,7 +118,7 @@ class CapUploadMain extends React.Component {
                 </MediaQuery> */}
             </Paper>
         </MediaQuery>
-        <ReInfoDialogWrapped
+        <CapUploadHelpDialogWrapped
             selectedValue={this.state.selectedValue}
             open={this.state.dialogOpen}
             onClose={this.handleCloseDialog}
