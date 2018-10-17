@@ -15,6 +15,8 @@ import UploadCorrespondenceButtons from './UploadCorrespondenceButtons';
 import StatusBarMain from '../status_bar/StatusBarMain';
 import HelpIcon from '@material-ui/icons/Help';
 import UploadCorrHelpDialogWrapped from '../help_dialogs/UploadCorrHelpDialog';
+import CorrespondenceTable from './CorrespondenceTable';
+import MediaQuery from 'react-responsive';
 
 const styles = theme => ({
     appBar:     {
@@ -50,107 +52,144 @@ function Transition(props) {
 }
 
 class UploadCorrespondenceMain extends React.Component {
-  state = {
-    open: false,
-    value: 0, 
-    openFab: false
-  };
+    state = {
+        open: false,
+        value: 0, 
+        openFab: false, 
+        showTable: false
+    };
 
-  handleChangeFab = (value) => {
-    this.setState({ value });
-  };
+    handleChangeFab = (value) => {
+        this.setState({ value });
+    };
 
-  handleClickOpenFab = () => {
-    this.setState({
-      openFab: true,
-    });
-  };
+    handleClickOpenFab = () => {
+        this.setState({
+            openFab: true,
+        });
+    };
 
-  handleCloseFab = value => {
-    this.setState({ selectedValue: value, openFab: false });
-  };
+    handleCloseFab = value => {
+        this.setState({ selectedValue: value, openFab: false });
+    };
 
-  handleClickOpen = () => {
-    this.setState({ open: true });
-  };
+    handleClickOpen = () => {
+        this.setState({ open: true });
+    };
 
-  handleClose = () => {
-    this.setState({ open: false });
-  };
+    handleClose = () => {
+        this.setState({ open: false });
+    };
 
-  render() {
-    const { classes } = this.props;
-    return (
-        <div>
-            <StatusBarMain />
-            <Paper className={classes.paperRoot} elevation={6}>
-                <center>
-                    <Typography variant="display1" component="h3" align="center">
-                        {`Upload Correspondence`}
-                    </Typography>
-                    <br />
-                    <Typography variant="subheading" gutterBottom>
-                        {`Click below to upload records of any official Compliance Action correspondence sent to – or, received from – the subject Regulated Entity.  If there are no records to upload at this time, you may return to this screen later.`}
-                    </Typography>
-                    <br />
-                    <Button 
-                        variant="contained" 
-                        color="primary" 
-                        className={classes.button} 
-                        onClick={this.handleClickOpen}
-                    >
-                        Upload Correspondence
-                    </Button>
-                </center>
-            </Paper>
-            <UploadCorrespondenceButtons />
-            <Button variant="fab" mini color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpenFab}>
-                <HelpIcon />
-            </Button> 
-            <UploadCorrHelpDialogWrapped
-                selectedValue={this.state.selectedValue}
-                open={this.state.openFab}
-                onClose={this.handleCloseFab}
-            />
-            <Dialog
-                fullScreen
-                open={this.state.open}
-                onClose={this.handleClose}
-                TransitionComponent={Transition}
-            >
-                <AppBar className={classes.appBar}>
-                    <Toolbar>
-                    <IconButton color="inherit" onClick={this.handleClose} aria-label="Close">
-                        <CloseIcon />
-                    </IconButton>
-                    <Typography variant="title" color="inherit" className={classes.flex}>
-                        {`Upload Correspondence`}
-                    </Typography>
-                    <Button color="inherit" onClick={this.handleClose}>
-                        upload
-                    </Button>
-                    </Toolbar>
-                </AppBar>
-                <br />
-                <input
-                    accept="image/*"
-                    className={classes.input}
-                    id="contained-button-file"
-                    multiple
-                    type="file"
-                />
-                <label htmlFor="contained-button-file">
+    handleShowTable = () => {
+        this.setState((prevState) => ({
+            showTable: !prevState.showTable
+        }))
+    };
+
+    showTable = () => {
+        if(this.state.showTable){
+            return (
+                <React.Fragment>
+                    <MediaQuery minDeviceWidth={700}>
+                        <CorrespondenceTable />
+                    </MediaQuery>
+                    <MediaQuery maxDeviceWidth={699}>
+                        <br />
+                        <Typography variant="body1" gutterBottom align="center">
+                            {`This table not yet supported on mobile.`}
+                        </Typography>
+                        <br />
+                    </MediaQuery>
+                </React.Fragment>
+            )
+        } else {
+            return null
+        }
+    }
+
+    render() {
+        const { classes } = this.props;
+        return (
+            <div>
+                <StatusBarMain />
+                <Paper className={classes.paperRoot} elevation={6}>
                     <center>
-                        <Button variant="contained" component="span" className={classes.button}>
-                            Browse
-                            <CloudUploadIcon className={classes.rightIcon} />
+                        <Typography variant="display1" component="h3" align="center">
+                            {`Upload Correspondence`}
+                        </Typography>
+                        <br />
+                        <Typography variant="subheading" gutterBottom>
+                            {`Click below to upload records of any official Compliance Action correspondence sent to – or, received from – the subject Regulated Entity.  If there are no records to upload at this time, you may return to this screen later.`}
+                        </Typography>
+                        <br />
+                        <Button 
+                            variant="contained" 
+                            color="primary" 
+                            className={classes.button} 
+                            onClick={this.handleClickOpen}
+                        >
+                            Upload Correspondence
+                        </Button>
+                        <Button 
+                            variant="contained" 
+                            color="secondary" 
+                            className={classes.button} 
+                            onClick={this.handleShowTable}
+                        >
+                            View Correspondence
                         </Button>
                     </center>
-                </label>
-            </Dialog>
-        </div>
-    );
-  }
+                </Paper>
+                {this.showTable()}
+                <UploadCorrespondenceButtons />
+                <Button variant="fab" mini color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpenFab}>
+                    <HelpIcon />
+                </Button> 
+                <UploadCorrHelpDialogWrapped
+                    selectedValue={this.state.selectedValue}
+                    open={this.state.openFab}
+                    onClose={this.handleCloseFab}
+                />
+                <Dialog
+                    fullScreen
+                    open={this.state.open}
+                    onClose={this.handleClose}
+                    TransitionComponent={Transition}
+                >
+                    <AppBar className={classes.appBar}>
+                        <Toolbar>
+                        <IconButton color="inherit" onClick={this.handleClose} aria-label="Close">
+                            <CloseIcon />
+                        </IconButton>
+                        <Typography variant="title" color="inherit" className={classes.flex}>
+                            {`Upload Correspondence`}
+                        </Typography>
+                        <Button color="inherit" onClick={this.handleClose}>
+                            upload
+                        </Button>
+                        </Toolbar>
+                    </AppBar>
+                    <br />
+                    <input
+                        accept="image/*"
+                        className={classes.input}
+                        id="contained-button-file"
+                        multiple
+                        type="file"
+                    />
+                    <label htmlFor="contained-button-file">
+                        <center>
+                            <Button variant="contained" component="span" className={classes.button}>
+                                Browse
+                                <CloudUploadIcon className={classes.rightIcon} />
+                            </Button>
+                        </center>
+                    </label>
+                </Dialog>
+            </div>
+        );
+    }
 }
 
 UploadCorrespondenceMain.propTypes = {

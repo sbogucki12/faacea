@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import HelpIcon from '@material-ui/icons/Help';
 import InformalHelpDialogWrapped from '../help_dialogs/InformalHelpDialog';
 import MediaQuery from 'react-responsive';
-import StatusBarMain from '../status_bar/StatusBarMain';
+import StatusBarInformal from '../status_bar/StatusBarInformal';
 import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
 
 const styles = theme => ({
@@ -54,7 +54,7 @@ class ActionDeterminationInformal extends React.Component {
     return (
       <React.Fragment>
         <MediaQuery minDeviceWidth={350}>
-          <StatusBarMain />
+          <StatusBarInformal />
         </MediaQuery>
         <MediaQuery maxDeviceWidth={349}>
           <StatusBarMainMobile />

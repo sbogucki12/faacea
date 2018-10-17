@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import HelpIcon from '@material-ui/icons/Help';
 import AdminHelpDialogWrapped from '../help_dialogs/AdminHelpDialog';
 import MediaQuery from 'react-responsive';
-import StatusBarMain from '../status_bar/StatusBarMain';
+import StatusBarAdminDetermination from '../status_bar/StatusBarAdminDetermination';
 import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
 
 const styles = theme => ({
@@ -60,7 +60,7 @@ class ActionDetermination extends React.Component {
     return (
       <React.Fragment>
         <MediaQuery minDeviceWidth={350}>
-          <StatusBarMain />
+          <StatusBarAdminDetermination />
         </MediaQuery>
         <MediaQuery maxDeviceWidth={349}>
           <StatusBarMainMobile />
