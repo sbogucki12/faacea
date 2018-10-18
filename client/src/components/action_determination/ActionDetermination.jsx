@@ -70,13 +70,13 @@ class ActionDetermination extends React.Component {
             Action Determination
           </Typography>        
           <ActionDeterminationAdmin />
-          <Link to={"/main/action/informal"} className={classes.link}>
             <center>
-              <Button variant="outlined" color="primary" align="center" className={classes.button}>
-                Submit
-              </Button>
+              <Link to={"/main/action/informal"} className={classes.link}>
+                <Button variant="outlined" color="primary" align="center" className={classes.button}>
+                  Submit
+                </Button>
+              </Link>
             </center>
-          </Link>
           <Button variant="fab" mini color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpen}>
             <HelpIcon />
           </Button>  

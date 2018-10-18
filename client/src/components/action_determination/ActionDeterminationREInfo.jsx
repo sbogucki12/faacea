@@ -65,13 +65,13 @@ class ActionDeterminationREInfo extends React.Component{
             Regulated Entity - Information
           </Typography>        
           <REInfo />
-          <Link to={"/main/action/capmain"} className={classes.link}>
-            <center>
+          <center>
+            <Link to={"/main/action/capmain"} className={classes.link}>
               <Button variant="outlined" color="primary" align="center" className={classes.button}>
                 Submit
               </Button>
-            </center>
-          </Link>
+            </Link>
+          </center>
           <Button variant="fab" mini color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpen}>
             <HelpIcon />
           </Button>
