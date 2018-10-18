@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 import HelpIcon from '@material-ui/icons/Help';
 import ReInfoHelpDialogWrapped from '../help_dialogs/ReInfoHelpDialog';
 import MediaQuery from 'react-responsive';
-import StatusBarMain from '../status_bar/StatusBarMain';
 import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
+import StatusBarReInfo from '../status_bar/StatusBarReInfo';
 
 const styles = theme => ({
   root: {
@@ -55,7 +55,7 @@ class ActionDeterminationREInfo extends React.Component{
     return (
       <React.Fragment>
         <MediaQuery minDeviceWidth={350}>
-          <StatusBarMain />
+          <StatusBarReInfo />
         </MediaQuery>
         <MediaQuery maxDeviceWidth={349}>
           <StatusBarMainMobile />

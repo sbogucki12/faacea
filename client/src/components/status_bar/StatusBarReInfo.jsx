@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import StatusBarContent from './StatusBarContent';
+import SBContentReInfo from './SBContentReInfo';
 
 const styles = theme => ({
   root: {
@@ -23,7 +24,7 @@ function StatusBarReInfo(props) {
     <div>
         <center>
             <Paper className={classes.root} elevation={6}>
-                <StatusBarContent />
+                <SBContentReInfo />
             </Paper>
         </center>
     </div>

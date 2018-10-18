@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import SelectCorrespondence from './SelectCorrespondence';
 import SelectCorrespondenceHeader from './SelectCorrespondenceHeader';
 import SelectCorrespondenceButtons from './SelectCorrespondenceButtons';
-import StatusBarMain from '../status_bar/StatusBarMain';
+import StatusBarSelectCorr from '../status_bar/StatusBarSelectCorr';
 import Button from '@material-ui/core/Button';
 import HelpIcon from '@material-ui/icons/Help';
 import SelectCorrespondenceHelpDialogWrapped from '../help_dialogs/SelectCorrespondenceHelpDialog';
@@ -54,7 +54,7 @@ class SelectCorrespondenceMain extends React.Component {
 
     return (
       <div>
-        <StatusBarMain />      
+        <StatusBarSelectCorr />      
         <SelectCorrespondenceHeader />
         <Paper className={classes.root} elevation={6}>
           <SelectCorrespondence />

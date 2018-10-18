@@ -15,7 +15,7 @@ const styles = {
   },
 };
 
-class SBAdminDeterminationDialog extends React.Component {
+class SBCapUploadDialog extends React.Component {
   handleClose = () => {
     this.props.onClose(this.props.selectedValue);
   };
@@ -34,17 +34,22 @@ class SBAdminDeterminationDialog extends React.Component {
           <List>
               <ListItem>
                 <ListItemText>
-                    <b>{`Regulated Entity:`}</b> &nbsp; TBD
+                    <b>{`Regulated Entity:`}</b> &nbsp; {`Joe's Airplane`}
                 </ListItemText>
               </ListItem>
               <ListItem>
                 <ListItemText>
-                    <b>{`Compliance Action Type:`}</b> &nbsp; TBD
+                    <b>{`Compliance Action Type:`}</b> &nbsp; {`Administrative`}
                 </ListItemText>
               </ListItem>
               <ListItem>
                 <ListItemText>
-                    <b>{`CAP Required?:`}</b> &nbsp; TBD
+                    <b>{`Compliance Action Type:`}</b> &nbsp; {`Informal`}
+                </ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText>
+                    <b>{`CAP Required?:`}</b> &nbsp; {`Yes`}
                 </ListItemText>
               </ListItem>
           </List>
@@ -54,11 +59,11 @@ class SBAdminDeterminationDialog extends React.Component {
   }
 }
 
-SBAdminDeterminationDialog.propTypes = {
+SBCapUploadDialog.propTypes = {
   classes: PropTypes.object.isRequired,
   onClose: PropTypes.func,
   selectedValue: PropTypes.string,
 };
 
-const SBAdminDeterminationDialogWrapped = withStyles(styles)(SBAdminDeterminationDialog);
-export default SBAdminDeterminationDialogWrapped; 
+const SBCapUploadDialogWrapped = withStyles(styles)(SBCapUploadDialog);
+export default SBCapUploadDialogWrapped; 

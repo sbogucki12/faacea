@@ -15,7 +15,7 @@ import HelpIcon from '@material-ui/icons/Help';
 import CapUploadHelpDialogWrapped from '../help_dialogs/CapUploadHelpDialog';
 import CapTable from './CapTable';
 import MediaQuery from 'react-responsive';
-import StatusBarMain from '../status_bar/StatusBarMain';
+import StatusBarCapUpload from '../status_bar/StatusBarCapUpload';
 import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
 import CapProceed from './CapProceed';
 
@@ -80,7 +80,7 @@ class CapUploadMain extends React.Component {
     return (
       <div>
         <MediaQuery minDeviceWidth={350}>
-            <StatusBarMain />
+            <StatusBarCapUpload />
         </MediaQuery>
         <MediaQuery maxDeviceWidth={349}>
             <StatusBarMainMobile />

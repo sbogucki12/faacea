@@ -11,7 +11,7 @@ import Paper from '@material-ui/core/Paper';
 import HelpIcon from '@material-ui/icons/Help';
 import CapUploadHelpDialogWrapped from '../help_dialogs/CapUploadHelpDialog';
 import { Link } from 'react-router-dom';
-import StatusBarMain from '../status_bar/StatusBarMain';
+import StatusBarCap from '../status_bar/StatusBarCap';
 import MediaQuery from 'react-responsive';
 import StatusBarMainMobile from '../status_bar/StatusBarMainMobile';
 
@@ -71,7 +71,7 @@ class CapMain extends React.Component {
         return (
             <div> 
                 <MediaQuery minDeviceWidth={350}>
-                    <StatusBarMain />
+                    <StatusBarCap />
                 </MediaQuery>
                 <MediaQuery maxDeviceWidth={349}>
                     <StatusBarMainMobile />

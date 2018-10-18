@@ -12,7 +12,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import Paper from '@material-ui/core/Paper';
 import UploadCorrespondenceButtons from './UploadCorrespondenceButtons';
-import StatusBarMain from '../status_bar/StatusBarMain';
+import StatusBarUploadCorr from '../status_bar/StatusBarUploadCorr';
 import HelpIcon from '@material-ui/icons/Help';
 import UploadCorrHelpDialogWrapped from '../help_dialogs/UploadCorrHelpDialog';
 import CorrespondenceTable from './CorrespondenceTable';
@@ -112,7 +112,7 @@ class UploadCorrespondenceMain extends React.Component {
         const { classes } = this.props;
         return (
             <div>
-                <StatusBarMain />
+                <StatusBarUploadCorr />
                 <Paper className={classes.paperRoot} elevation={6}>
                     <center>
                         <Typography variant="display1" component="h3" align="center">
