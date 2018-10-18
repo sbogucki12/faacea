@@ -13,6 +13,7 @@ import ProcessMapMain from '../process_map/ProcessMapMain';
 import SelectCorrespondenceMain from '../correspondence/SelectCorrespondenceMain';
 import SummaryMain from '../summary/SummaryMain';
 import UploadCorrespondenceMain from '../correspondence/UploadCorrespondenceMain';
+import ContActionMain from '../continue_action/ContActionMain';
 
 class MainWindowLayout extends React.Component {
    
@@ -23,6 +24,7 @@ class MainWindowLayout extends React.Component {
                     <React.Fragment>
                         <BrowserRouter>
                             <Switch>
+                                <Route exact path="/main/openexisting/main" component={ContActionMain} />
                                 <Route exact path="/main/action/uploadcorrespondence" component={UploadCorrespondenceMain} />
                                 <Route exact path="/main/action/actionsummary" component={SummaryMain}  />
                                 <Route exact path="/main/action/selectcorrespondence" component={SelectCorrespondenceMain}  />
@@ -42,6 +44,7 @@ class MainWindowLayout extends React.Component {
                     <React.Fragment>
                         <BrowserRouter>
                             <Switch>
+                                <Route exact path="/main/openexisting/main" component={PleaseLogIn} />
                                 <Route exact path="/main/action/uploadcorrespondence" component={PleaseLogIn}  />
                                 <Route exact path="/main/action/actionsummary" component={PleaseLogIn}  />
                                 <Route exact path="/main/action/selectcorrespondence" component={PleaseLogIn}  />

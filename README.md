@@ -10,6 +10,15 @@
 
 
 
+**Oct. 18, 2018:**
+
+
+
++ Began work on the "Continue Existing" action screen
+
+
+
+
 **Oct. 17, 2018:** 
 
 

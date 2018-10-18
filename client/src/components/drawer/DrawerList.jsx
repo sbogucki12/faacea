@@ -69,6 +69,7 @@ class DrawerList extends React.Component {
                     <ListItemText primary="Create New VDR" />
                 </ListItem>
             </Tooltip>
+            <a href="/main/openexisting/main" className={classes.link}>
             <Tooltip disableFocusListener disableTouchListener title={contExistingToolTip}>
                 <ListItem
                 button
@@ -81,6 +82,7 @@ class DrawerList extends React.Component {
                     <ListItemText primary="Continue Existing" />
                 </ListItem>
             </Tooltip>
+            </a>
             <Tooltip disableFocusListener disableTouchListener title={inboxToolTip}>
                 <ListItem
                 button
