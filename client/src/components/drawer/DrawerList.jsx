@@ -7,7 +7,11 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import Tooltip from '@material-ui/core/Tooltip';
-import { addNewActionToolTip } from './tooltipsText';
+import { 
+    addNewActionToolTip, 
+    submitNewVDRToolTip,
+    contExistingToolTip,
+    inboxToolTip } from './tooltipsText';
 import AddIcon from '@material-ui/icons/Add';
 import InboxIcon from '@material-ui/icons/Email';
 import ArrowIcon from '@material-ui/icons/PlayArrow';
@@ -53,36 +57,42 @@ class DrawerList extends React.Component {
                     </ListItem>
                 </Tooltip>  
             </a>
-            <ListItem
-            button
-            selected={this.state.selectedIndex === 1}
-            onClick={event => this.handleListItemClick(event, 1)}
-            >
-                <ListItemIcon>
-                    <AddCircleIcon />
-                </ListItemIcon>
-                <ListItemText primary="Create New VDR" />
-            </ListItem>
-            <ListItem
-            button
-            selected={this.state.selectedIndex === 2}
-            onClick={event => this.handleListItemClick(event, 2)}
-            >
-                <ListItemIcon>
-                    <ArrowIcon />
-                </ListItemIcon>
-                <ListItemText primary="Continue Existing" />
-            </ListItem>
-            <ListItem
-            button
-            selected={this.state.selectedIndex === 3}
-            onClick={event => this.handleListItemClick(event, 3)}
-            >
-                <ListItemIcon>
-                    <InboxIcon />
-                </ListItemIcon>
-                <ListItemText primary="Inbox" />
-            </ListItem>
+            <Tooltip disableFocusListener disableTouchListener title={submitNewVDRToolTip}>
+                <ListItem
+                button
+                selected={this.state.selectedIndex === 1}
+                onClick={event => this.handleListItemClick(event, 1)}
+                >
+                    <ListItemIcon>
+                        <AddCircleIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Create New VDR" />
+                </ListItem>
+            </Tooltip>
+            <Tooltip disableFocusListener disableTouchListener title={contExistingToolTip}>
+                <ListItem
+                button
+                selected={this.state.selectedIndex === 2}
+                onClick={event => this.handleListItemClick(event, 2)}
+                >
+                    <ListItemIcon>
+                        <ArrowIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Continue Existing" />
+                </ListItem>
+            </Tooltip>
+            <Tooltip disableFocusListener disableTouchListener title={inboxToolTip}>
+                <ListItem
+                button
+                selected={this.state.selectedIndex === 3}
+                onClick={event => this.handleListItemClick(event, 3)}
+                >
+                    <ListItemIcon>
+                        <InboxIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Inbox" />
+                </ListItem>
+            </Tooltip>
         </List>
         <Divider />
       </div>

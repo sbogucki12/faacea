@@ -10,6 +10,18 @@
 
 
 
+**Oct. 17, 2018:** 
+
+
+
++ Finished case info dialog boxes on every action screen
++ Added tooltips to all buttons as needed
++ Activated the "Back" button on every screen
+
+
+
+
+
 **Oct. 16, 2018:** 
 
 
