@@ -55,7 +55,7 @@ function CapTable(props) {
         <TableHead>
           <TableRow>
             <CustomTableCell>File Name</CustomTableCell>
-            <CustomTableCell>Organization</CustomTableCell>
+            <CustomTableCell>Regulated Entity</CustomTableCell>
             <CustomTableCell>Date Uploaded</CustomTableCell>
             <CustomTableCell>Committed Completion Date</CustomTableCell>
             <CustomTableCell>CA Complete?</CustomTableCell>

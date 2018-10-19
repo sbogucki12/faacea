@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import HelpIcon from '@material-ui/icons/Help';
 import SummaryHelpDialogWrapped from '../help_dialogs/SummaryHelpDialog';
+import SummaryDetails from './SummaryDetails';
 
 const styles = theme => ({
   paperRoot: {
@@ -20,6 +21,10 @@ const styles = theme => ({
     position: 'absolute',
     bottom: theme.spacing.unit * 2,
     right: theme.spacing.unit * 2
+  }, 
+  root:     {
+    marginLeft: "10%", 
+    marginRight: "10%"
   }
 });
 
@@ -50,12 +55,19 @@ class SummaryMain extends React.Component{
     const { classes } = this.props;
 
     return (
-      <div>
-        <Paper className={classes.paperRoot} elevation={6}>
-          <Typography component="h2" variant="display1" gutterBottom align="center">
-            {`Action Summary`}
-          </Typography>
-        </Paper>
+      <React.Fragment>
+        <div className={classes.root}>
+          <Paper className={classes.paperRoot} elevation={6}>
+            <Typography component="h2" variant="display1" gutterBottom align="center">
+              {`Action Summary`}
+            </Typography>
+            <Typography component="p" variant="caption" gutterBottom align="center">
+              {`On this screen, you may review this Compliance / VDR Action for completeness.  If all required steps have been satisfied, you may save and close the Action, or send it for management view.`}
+            </Typography>
+          </Paper>
+          <br />
+        </div>
+        <SummaryDetails />
         <Button variant="fab" mini color="primary" aria-label="Add" className={classes.fab} onClick={this.handleClickOpen}>
           <HelpIcon />
         </Button>
@@ -64,7 +76,8 @@ class SummaryMain extends React.Component{
           open={this.state.open}
           onClose={this.handleClose}
         />      
-      </div>
+
+      </React.Fragment>
     );
   }
 }

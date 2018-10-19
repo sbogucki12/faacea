@@ -10,6 +10,15 @@
 
 
 
+
+**Oct. 19, 2018:**
+
+
+
++ Worked on the Action Summary screen
+
+
+
 **Oct. 18, 2018:**
 
 
@@ -185,17 +194,22 @@
 ## To-Do: 
 
 
+
+[ ] -  Add dialog for "Contact Us"
+
+[ ] -  Add screens for verifying CA (and update process map)
+
 [ ] -  Add table of correspondence 
 
-[ ] -  Finish Action Summary page
+[ ] -  Finish Action Summary page  - Add send for Review
 
-[ ]  - Transfer case info functions from FAB to status bar
+[ x ]  - Transfer case info functions from FAB to status bar
 
-[ ]  - Finish Regulated Entity Info Component 
+[ x ]  - Finish Regulated Entity Info Component 
 
-[ ]  - Create tool tips for all links
+[ x ]  - Create tool tips for all links
 
-[ ]  - Create "Case Info" pop up for all screens
+[ x ]  - Create "Case Info" pop up for all screens
 
 [ ]  - Add Paper to Log in Screen
 
