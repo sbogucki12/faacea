@@ -14,6 +14,7 @@ import SelectCorrespondenceMain from '../correspondence/SelectCorrespondenceMain
 import SummaryMain from '../summary/SummaryMain';
 import UploadCorrespondenceMain from '../correspondence/UploadCorrespondenceMain';
 import ContActionMain from '../continue_action/ContActionMain';
+import ReportingMain from '../reporting/ReportingMain';
 
 class MainWindowLayout extends React.Component {
    
@@ -24,6 +25,7 @@ class MainWindowLayout extends React.Component {
                     <React.Fragment>
                         <BrowserRouter>
                             <Switch>
+                                <Route exact path="/main/reporting" component={ReportingMain} />
                                 <Route exact path="/main/openexisting/main" component={ContActionMain} />
                                 <Route exact path="/main/action/uploadcorrespondence" component={UploadCorrespondenceMain} />
                                 <Route exact path="/main/action/actionsummary" component={SummaryMain}  />
@@ -44,6 +46,7 @@ class MainWindowLayout extends React.Component {
                     <React.Fragment>
                         <BrowserRouter>
                             <Switch>
+                                <Route exact path="/main/reporting" component={PleaseLogIn} />
                                 <Route exact path="/main/openexisting/main" component={PleaseLogIn} />
                                 <Route exact path="/main/action/uploadcorrespondence" component={PleaseLogIn}  />
                                 <Route exact path="/main/action/actionsummary" component={PleaseLogIn}  />

@@ -11,11 +11,13 @@ import {
     addNewActionToolTip, 
     submitNewVDRToolTip,
     contExistingToolTip,
-    inboxToolTip } from './tooltipsText';
+    inboxToolTip,
+    reportingToolTip } from './tooltipsText';
 import AddIcon from '@material-ui/icons/Add';
 import InboxIcon from '@material-ui/icons/Email';
 import ArrowIcon from '@material-ui/icons/PlayArrow';
 import AddCircleIcon from '@material-ui/icons/AddCircleOutline';
+import ReportingIcon from '@material-ui/icons/Assessment';
 
 const styles = theme => ({
   root: {
@@ -83,11 +85,25 @@ class DrawerList extends React.Component {
                 </ListItem>
             </Tooltip>
             </a>
-            <Tooltip disableFocusListener disableTouchListener title={inboxToolTip}>
+            <a href="/main/reporting" className={classes.link}>
+            <Tooltip disableFocusListener disableTouchListener title={reportingToolTip}>
                 <ListItem
                 button
                 selected={this.state.selectedIndex === 3}
                 onClick={event => this.handleListItemClick(event, 3)}
+                >
+                    <ListItemIcon>
+                        <ReportingIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Reporting" />
+                </ListItem>
+            </Tooltip>
+            </a>
+            <Tooltip disableFocusListener disableTouchListener title={inboxToolTip}>
+                <ListItem
+                button
+                selected={this.state.selectedIndex === 4}
+                onClick={event => this.handleListItemClick(event, 4)}
                 >
                     <ListItemIcon>
                         <InboxIcon />

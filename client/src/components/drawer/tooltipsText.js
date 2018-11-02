@@ -3,11 +3,13 @@ const submitNewVDRToolTip = "Submit a new Voluntary Disclosure Report.  CEA will
 const contExistingToolTip = "Click to continue an existing Compliance Action or VDR."
 const inboxToolTip = "Click to read and compose messages."
 const caseInfoToolTip = "Click for information about this Compliance Action."
+const reportingToolTip = "Review up-to-date Compliance data via charts and tools."
 
 module.exports ={
     addNewActionToolTip: addNewActionToolTip, 
     submitNewVDRToolTip: submitNewVDRToolTip,
     contExistingToolTip: contExistingToolTip,
     inboxToolTip: inboxToolTip,
-    caseInfoToolTip: caseInfoToolTip 
+    caseInfoToolTip: caseInfoToolTip,
+    reportingToolTip: reportingToolTip 
 };
