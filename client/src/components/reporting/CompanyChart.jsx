@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
-// import Typography from '@material-ui/core/Typography';
 import { companyData } from './reportingData';
 import Button from '@material-ui/core/Button';
 
@@ -20,23 +19,14 @@ const styles = theme => ({
 
 class CompanyChart extends React.Component{
     constructor(props) {
-        super(props);
-        this.state = {
-            showChart: true
-        }
+        super(props);       
     };
 
-    handleHideChart = () => {
-        this.setState({
-            showChart: false
-        })
-    }   
+    render(){
+        const { classes } = this.props;
 
-    hideChart = (props) => {
-        if(this.state.showChart){
-            const { classes } = this.props; 
-            return(
-                <React.Fragment> 
+        return(
+            <React.Fragment> 
                 <br />
                 <Paper className={classes.paperRoot} elevation={6} align='center'>
                     <BarChart width={600} height={300} data={companyData}>
@@ -53,28 +43,12 @@ class CompanyChart extends React.Component{
                         <Tooltip cursor={false} />                
                     </BarChart>
                     <br />
-                    <Button variant="outlined" className={classes.button} align='center' onClick={this.handleHideChart}>
+                    <Button variant="outlined" className={classes.button} align='center' onClick={this.props.handleCompany}>
                         {`Close`}
-                </Button>
+                    </Button>
                 </Paper>
                 <br />
-                </React.Fragment>
-            )
-        } else {
-            return(
-                null
-            )
-        }
-    }
-
-
-    render(){
-        const { classes } = this.props;
-
-        return (
-            <div>
-                {this.hideChart()}
-            </div>
+            </React.Fragment>
         );
     }
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ReportingHeader from './ReportingHeader';
-import ReportingBody from './ReportingBody';
 import YearlyChart from './YearlyChart';
 import ReportingButtons from './ReportingButtons';
 import ComplianceChart from './ComplianceChart';
@@ -42,39 +41,39 @@ class ReportingMain extends React.Component {
   }
   
   handleYearly = () => {
-    this.setState({
-        showYearly: true
-    })
-}
-
-handleCompany = () => {
-    this.setState({
-        showCompany: true
-    })
-}
-
-handleCompliance = () => {
-    this.setState({
-        showCompliance: true
-    })
-}
-
-showYearly = () => {
-    if(this.state.showYearly){
-      return(
-        <YearlyChart hideChart={false} />
-      ) 
-    } else {
-      return (
-        null
-      )
-    }
+    this.setState((prevState) => ({
+        showYearly: !prevState.showYearly
+    }))
   }
+
+  handleCompany = () => {
+      this.setState((prevState) => ({
+          showCompany: !prevState.showCompany
+      }))
+  }
+
+  handleCompliance = () => {
+      this.setState((prevState) => ({
+          showCompliance: !prevState.showCompliance
+      }))
+  }
+
+  showYearly = () => {
+      if(this.state.showYearly){
+        return(
+          <YearlyChart handleYearly={this.handleYearly} />
+        ) 
+      } else {
+        return (
+          null
+        )
+      }
+    }
 
   showCompany = () => {
     if(this.state.showCompany){
       return(
-        <CompanyChart hideChart={false} />
+        <CompanyChart handleCompany={this.handleCompany} />
       ) 
     } else {
       return (
@@ -86,7 +85,7 @@ showYearly = () => {
   showCompliance = () => {
     if(this.state.showCompliance){
       return(
-        <ComplianceChart hideChart={false} />
+        <ComplianceChart handleCompliance={this.handleCompliance} />
       ) 
     } else {
       return (
@@ -101,6 +100,7 @@ showYearly = () => {
     return (
       <div className={classes.root}>
         <ReportingHeader/>
+        <br />
         <br />
         <Paper className={classes.paperRoot} elevation={6}>
           <Grid container className={classes.buttonsRoot} spacing={16} justify="center">
@@ -140,12 +140,12 @@ showYearly = () => {
           </Grid>
         </Paper>
         <br />
-          {this.showYearly()}
-          <br />
-          {this.showCompany()}
-          <br />
-          {this.showCompliance()}
-          <br />
+        {this.showYearly()}
+        <br />
+        {this.showCompany()}
+        <br />
+        {this.showCompliance()}
+        <br />
       </div>
     );
   }
