@@ -10,7 +10,6 @@ import blue from '@material-ui/core/colors/blue';
 import grey from '@material-ui/core/colors/grey';
 import Landing from './Landing';
 import 'typeface-roboto';
-import * as V from 'victory';
 
 const theme = createMuiTheme({
     palette: {

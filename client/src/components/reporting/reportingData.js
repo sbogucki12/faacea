@@ -52,6 +52,47 @@ const barData = [
     }
 ]
 
+const companyData = [
+    {
+        company: `Joe's Airplane`, number: 14
+    },
+    {
+        company: `Supersonica`, number: 2
+    }, 
+    {
+        company: `The Flying Company`, number: 65
+    }, 
+    {
+        company: `Falcon Express`, number: 41
+    }, 
+    {
+        company: `Super Jets`, number: 12
+    }, 
+    {
+        company: `North Pacific Air`, number: 28
+    }, 
+    {
+        company: `Moravia Airways`, number: 51
+    }    
+];
+
+const complianceData = [
+    {
+        type: `Informal`, number: 101, color: 'blue'
+    },
+    {
+        type: `Administrative`, number: 62, color: 'grey'
+    },
+    {
+        type: `Legal`, number: 6, color: 'green'
+    },
+    {
+        type: `VDR`, number: 19, color: 'red'
+    },
+]
+
 module.exports ={
-    barData: barData
+    barData: barData,
+    companyData: companyData, 
+    complianceData: complianceData
 };

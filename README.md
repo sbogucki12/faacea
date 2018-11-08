@@ -10,7 +10,16 @@
 
 
 
-**Nov. 11, 2018:** 
+**Nov. 7, 2018:** 
+
+
+
++ Added some charts (via ReCharts) to the reporting component
+
+
+
+
+**Nov. 1, 2018:** 
 
 
 
